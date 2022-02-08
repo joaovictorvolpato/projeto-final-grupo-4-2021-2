@@ -14,16 +14,11 @@ class System:
         self.__clk = pygame.time.Clock()
         self.__game_state = Game_state(self.__size/2, self.__size/2)
         self.__event_handler = Event_handler()
-        
 
     def initialize(self):
         pygame.init()
         pygame.display.set_caption(self.__title)
         self.main_loop()
-
-    def get_size(self):
-        return int(self.__size)
-
 
     @staticmethod 
     def __lookForCommands(output: dict, possible_commands: dict):
@@ -49,7 +44,7 @@ class System:
 
             # update os retangulos
             for i in self.__game_state.kinetic_objects:
-                i.update(self.__size)
+                i.update()
             # Draw
             self.__win.fill((12, 24, 36))
             for i in self.__game_state.objects:

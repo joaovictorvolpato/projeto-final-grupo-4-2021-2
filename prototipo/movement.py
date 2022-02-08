@@ -38,15 +38,17 @@ class Player:
         self.velX = 0
         self.velY = 0
         # Comandos dados por uma classe que conversa com event_handler
-        if self.left_pressed and self.x > 0:
-            self.x  -= self.speed
-        if self.right_pressed and  self.x < 400 - self.size:
-            self.x += self.speed
-        if self.up_pressed and  self.y > 0:
-            self.y -= self.speed
-        if self.down_pressed and  self.y < 400 - self.size:
-            self.y += self.speed
+        if self.left_pressed and not self.right_pressed:
+            self.velX = -self.speed
+        if self.right_pressed and not self.left_pressed:
+            self.velX = self.speed
+        if self.up_pressed and not self.down_pressed:
+            self.velY = -self.speed
+        if self.down_pressed and not self.up_pressed:
+            self.velY = self.speed
         
+        self.x += self.velX
+        self.y += self.velY 
 
         self.updateRect() 
          

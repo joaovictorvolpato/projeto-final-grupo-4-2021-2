@@ -1,5 +1,4 @@
 import pygame, sys
-
 import math
 class Player:
     def __init__(self, initial_x: int, initial_y: int, size: int, speed: int):
@@ -18,14 +17,6 @@ class Player:
     def commands(self):
         return self.__commands
 
-    @property
-    def get_x(self):
-        return int(self.__x)
-
-    @property
-    def get_y(self):
-        return int(self.__y)
-
     @commands.setter
     def commands(self, new_commands: dict):
         self.__commands = new_commands
@@ -42,25 +33,21 @@ class Player:
     def execute_commands(self):
         self.__velX = 0
         self.__velY = 0
-        if self.__commands['left'] and not self.__commands['right']  :
+        if self.__commands['left'] and not self.__commands['right']:
             self.__velX = -self.__speed
-        if self.__commands['right'] and not self.__commands['left'] :
+        if self.__commands['right'] and not self.__commands['left']:
             self.__velX = self.__speed
-        if self.__commands['up'] and not self.__commands['down'] :
+        if self.__commands['up'] and not self.__commands['down']:
             self.__velY = -self.__speed
-        if self.__commands['down'] and not self.__commands['up'] :
+        if self.__commands['down'] and not self.__commands['up']:
             self.__velY = self.__speed
         
         self.normalize()
         self.__x += self.__velX
         self.__y += self.__velY 
-    
 
-    def update(self,screen_size):
-        scrsz = int(screen_size)
-        edge = scrsz - self.__size
-        if edge > self.__x > 0 and edge > self.__y > 0:
-            self.__rect = pygame.Rect(int(self.__x), int(self.__y), self.__size, self.__size)
+    def update(self):
+        self.__rect = pygame.Rect(int(self.__x), int(self.__y), self.__size, self.__size)
 
     
 

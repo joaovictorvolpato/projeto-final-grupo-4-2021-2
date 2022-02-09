@@ -1,14 +1,11 @@
 import pygame, sys
 import math
-class Player:
-    def __init__(self, initial_x: int, initial_y: int, size: int, speed: int):
-        self.__x = initial_x
-        self.__y = initial_y
-        self.__size = size
-        self.__rect = pygame.Rect(self.__x, self.__y, size, size)
+from moving_object import Moving_object
+
+class Player(Moving_object):
+    def __init__(self, initial_x: int, initial_y: int, size: int, color:tuple, command: dict, speed:int):
+        super.__init__(self, )
         #depois vai ser um sprite
-        self.__color = (250, 160, 60)
-        self.__speed = speed
         self.__velX = 0
         self.__velY = 0
         self.__commands = {'up': False, 'down': False, 'right': False, 'left': False}

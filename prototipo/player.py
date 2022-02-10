@@ -1,15 +1,26 @@
 import pygame, sys
 import math
-from moving_object import Moving_object
-
-class Player(Moving_object):
-    def __init__(self, initial_x: int, initial_y: int, size: int, color:tuple, command: dict, speed:int):
-        super.__init__(self, )
+class Player:
+    def __init__(self, initial_x: int, initial_y: int, size: int, speed: int):
+        self.__x = initial_x
+        self.__y = initial_y
+        self.__size = size
+        self.__rect = pygame.Rect(self.__x, self.__y, size, size)
         #depois vai ser um sprite
+        self.__color = (250, 160, 60)
+        self.__speed = speed
         self.__velX = 0
         self.__velY = 0
         self.__commands = {'up': False, 'down': False, 'right': False, 'left': False}
 
+    @property
+    def velX(self):
+        return self.__velX
+    
+    @property
+    def velY(self):
+        return self.__velY
+    
     @property
     def commands(self):
         return self.__commands
@@ -45,6 +56,10 @@ class Player(Moving_object):
 
     def update(self):
         self.__rect = pygame.Rect(int(self.__x), int(self.__y), self.__size, self.__size)
+
+    def change_for_camera(self, vel_x, vel_y):
+        self.__x -= vel_x
+        self.__y -= vel_y
 
     
 

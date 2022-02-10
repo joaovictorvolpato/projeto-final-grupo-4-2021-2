@@ -42,9 +42,14 @@ class System:
                 command_object.commands = self.__lookForCommands(OUTPUT, command_object.commands)
                 command_object.execute_commands()
 
-            # update os retangulos
-            for i in self.__game_state.kinetic_objects:
+            #update por causa da camera
+            for i in self.__game_state.objects:
+                i.change_for_camera(self.__game_state.player.velX, self.__game_state.player.velY)
+
+            # update nos objetos
+            for i in self.__game_state.objects:
                 i.update()
+
             # Draw
             self.__win.fill((12, 24, 36))
             for i in self.__game_state.objects:

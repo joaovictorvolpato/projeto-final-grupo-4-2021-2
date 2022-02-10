@@ -1,8 +1,10 @@
 from player import Player
+from tile_map import Tile_map
 class Game_state:
     def __init__(self, playerX, playerY):
+        self.__tile_map = Tile_map()
         self.__player =  Player(playerX, playerY, 50, 4)
-        self.__objects = [self.__player]
+        self.__objects = [self.__player] + self.__tile_map.tile_list
         self.__kinetic_objects = [self.__player]
         self.__command_objects = [self.__player]
 

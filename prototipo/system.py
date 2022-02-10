@@ -45,6 +45,7 @@ class System:
             # update os retangulos
             for i in self.__game_state.kinetic_objects:
                 i.update()
+
             # Draw
             self.__win.fill((12, 24, 36))
             for i in self.__game_state.objects:

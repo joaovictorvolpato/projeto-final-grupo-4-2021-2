@@ -1,14 +1,20 @@
+from calendar import c
 import pygame, sys
 import math
-from moving_object import Moving_object
+from abc_object import ABCObject
 
-class Player(Moving_object):
-    def __init__(self, initial_x: int, initial_y: int, size: int, color:tuple, command: dict, speed:int):
-        super.__init__(self, )
-        #depois vai ser um sprite
+class Player(ABCObject):
+    def __init__(self, initial_x: int, initial_y: int, size: int, color:tuple, speed:int, commands:dict ):
+        super().__init__(initial_x, initial_y, size,  color)
+        #sprites
+        self.__x = initial_x
+        self.__y = initial_y
+        self.__size = size
+        self.__color = color
+        self.__speed = speed
+        self.__commands = commands
         self.__velX = 0
         self.__velY = 0
-        self.__commands = {'up': False, 'down': False, 'right': False, 'left': False}
 
     @property
     def commands(self):
@@ -17,7 +23,7 @@ class Player(Moving_object):
     @commands.setter
     def commands(self, new_commands: dict):
         self.__commands = new_commands
-    
+
     # usar para normalizar os vetores de velocidade, caso contrario, anda mais rápido nas diagonais
     def normalize(self):
         if self.__velX != 0 and self.__velY != 0:
@@ -41,7 +47,10 @@ class Player(Moving_object):
         
         self.normalize()
         self.__x += self.__velX
-        self.__y += self.__velY 
+        self.__y += self.__velY
+
+    def chance_for_camera():
+        pass
 
     def update(self):
         self.__rect = pygame.Rect(int(self.__x), int(self.__y), self.__size, self.__size)

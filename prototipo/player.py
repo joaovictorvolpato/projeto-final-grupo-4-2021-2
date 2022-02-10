@@ -14,6 +14,14 @@ class Player:
         self.__commands = {'up': False, 'down': False, 'right': False, 'left': False}
 
     @property
+    def velX(self):
+        return self.__velX
+    
+    @property
+    def velY(self):
+        return self.__velY
+    
+    @property
     def commands(self):
         return self.__commands
 
@@ -48,6 +56,10 @@ class Player:
 
     def update(self):
         self.__rect = pygame.Rect(int(self.__x), int(self.__y), self.__size, self.__size)
+
+    def change_for_camera(self, vel_x, vel_y):
+        self.__x -= vel_x
+        self.__y -= vel_y
 
     
 

@@ -4,7 +4,6 @@ class Tile_map:
     def __init__(self):
         self.__tilemap = MAP1
         self.__tile_list = []
-
         self.fill_tile_list()
 
     @property

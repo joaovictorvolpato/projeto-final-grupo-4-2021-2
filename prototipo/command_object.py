@@ -1,10 +1,23 @@
 import pygame
 from static_object import Static_object
 
-class Moving_object(Static_object):
-    def __init__(self, initial_x: int, initial_y: int, size: int, color:tuple, command: dict, speed:int):
-        Moving_object.__init__(self)
+class Command_object(Static_object):
+    def __init__(self, initial_x: int, initial_y: int, size: int, color:tuple, commands: dict, speed:int):
+        Command_object.__init__(self)
         self.__speed = speed
+        self.__x = initial_x
+        self.__y = initial_y
+        self.__color = color
+        self.__size = size
+        self.__rect = pygame.Rect(self.__x, self.__y, self.__size, self.__size)
+    
+    @property
+    def commands(self):
+        return self.__commands
+
+    @commands.setter
+    def commands(self, new_commands: dict):
+        self.__commands = new_commands
 
     def draw(self, win):
         pygame.draw.rect(win, self.__color, self.__rect)

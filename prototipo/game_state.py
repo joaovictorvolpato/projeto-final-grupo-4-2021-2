@@ -3,7 +3,7 @@ from level_dao import Level_dao
 from tile_map import Tile_map
 class Game_state:
     def __init__(self):
-        self.__level_dao = Level_dao('prototipo/levels.json', 1)
+        self.__level_dao = Level_dao('levels.json', 1)
         PLAYERSTART = self.__level_dao.get("player_start_position")
         PLAYERSIZE = self.__level_dao.get("player_size")
         PLAYERSPEED = self.__level_dao.get("player_speed")
@@ -17,7 +17,7 @@ class Game_state:
 
 
     def change_level(self, next_level: int):
-        self.__level_dao = Level_dao('prototipo/levels.json', next_level)
+        self.__level_dao = Level_dao('levels.json', next_level)
         PLAYERSTART = self.__level_dao.get("player_start_position")
         PLAYERSIZE = self.__level_dao.get("player_size")
         PLAYERSPEED = self.__level_dao.get("player_speed")

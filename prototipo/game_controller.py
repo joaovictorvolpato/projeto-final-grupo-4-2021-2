@@ -1,3 +1,4 @@
+from http.client import GATEWAY_TIMEOUT
 import pygame
 import sys
 from game_state import Game_state
@@ -25,12 +26,17 @@ class Game_controller:
         for i in self.__game_state.kinetic_objects:
                 i.update()
 
-    def drawn_all(self):
+    def draw_all(self):
         self.__win.fill((12, 24, 36))
         self.__offset.x = self.__game_state.player.rect.centerx - self.__win.get_size()[0] / 2
         self.__offset.y = self.__game_state.player.rect.centery - self.__win.get_size()[1] / 2
         for i in self.__game_state.objects:
             i.draw(self.__win, self.__offset)
+
+    def get_camera_offset(self):
+        PLAYER = self.__game_state.player
+        
+
 
     def execute_all_commands(self):
         self.__event_handler.key_checker()

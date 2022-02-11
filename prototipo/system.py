@@ -31,7 +31,7 @@ class System:
             self._game_controller.update_all()
 
             # Draw
-            self._game_controller.drawn_all()
+            self._game_controller.draw_all()
 
             # update o display inteiro e fps
             pygame.display.flip()

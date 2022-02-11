@@ -1,9 +1,11 @@
 import pygame, sys
 import math
 import copy
-
-class Player():
-    def __init__(self, initial_x: int, initial_y: int, size: int, speed:int):
+from abc_command_object import Command_object
+from abc_kinetic_object import Kinetic_object
+class Player(Kinetic_object, Command_object):
+    def __init__(self, initial_x: int, initial_y: int, size: int, speed: int):
+        super().__init__(initial_x, initial_y, size, speed)
         #sprites
         self.__x = initial_x
         self.__y = initial_y

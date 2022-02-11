@@ -1,11 +1,14 @@
+from abc import ABC
 from tempDB import *
 import pygame
 import copy
-class Tile:
-    def __init__(self, x, y):
-        self.__x = x
-        self.__y = y
-        self.__size = SIZE
+from abc_object import ABCObject
+class Tile(ABCObject):
+    def __init__(self, initial_x: int, initial_y: int, size: int):
+        super().__init__(initial_x, initial_y, size)
+        self.__x = initial_x
+        self.__y = initial_y
+        self.__size = size
         self.__color = (21,10, 150)
         self.__rect = pygame.Rect(self.__x, self.__y, self.__size, self.__size)
         # self.__offset = pygame.Vector2()

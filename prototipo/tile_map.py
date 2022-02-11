@@ -14,6 +14,6 @@ class Tile_map:
         for y, row in enumerate(self.__tilemap):
             for x, tile in enumerate(row):
                 if tile == 'x':
-                    wall = Tile(x*SIZE, y*SIZE)
+                    wall = Tile(x*SIZE, y*SIZE, SIZE)
                     self.__tile_list.append(wall)
 

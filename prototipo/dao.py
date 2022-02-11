@@ -10,8 +10,6 @@ class DAO(ABC):
             self.__load()
         except FileNotFoundError:
             print('db vazia')
-    # def __dump(self):
-    #     pickle.dump(self.objectCache, open(self.datasource, 'wb'))
 
     @property
     def datasource(self):
@@ -22,12 +20,12 @@ class DAO(ABC):
         return self.__object_cache
 
     def __load(self):
-        self.__object_cache = json.load(open(self.__datasource))
-        print(self.__object_cache)
+        file = open(self.__datasource)
+        self.__object_cache = json.load(file)
+        file.close()
 
 
     def get(self, key):
-        print('pai')
         try:
             return self.__object_cache[key]
         

@@ -1,8 +1,10 @@
 from player import Player
+from level_dao import Level_dao
 from tile_map import Tile_map
 class Game_state:
     def __init__(self, playerX, playerY):
-        self.__tile_map = Tile_map()
+        self.level_dao = Level_dao('prototipo/levels.json', 1)
+        self.__tile_map = Tile_map(self.level_dao.get("tilemap"))
         self.__player =  Player(playerX - 60, playerY - 60, 120, 4)
         self.__objects = [self.__player] + self.__tile_map.tile_list
         self.__obstacles = self.__tile_map.tile_list

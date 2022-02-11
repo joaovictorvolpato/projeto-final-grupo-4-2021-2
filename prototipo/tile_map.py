@@ -1,8 +1,8 @@
 from tempDB import *
 from tile import Tile
 class Tile_map:
-    def __init__(self):
-        self.__tilemap = MAP1
+    def __init__(self, tilemap):
+        self.__tilemap = tilemap
         self.__tile_list = []
         self.fill_tile_list()
 

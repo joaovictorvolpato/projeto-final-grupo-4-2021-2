@@ -6,7 +6,7 @@ from event_handler import Event_handler
 import pygame
 class Game_controller:
     def __init__(self, screen_size):
-        self.__game_state = Game_state(screen_size/2, screen_size/2)
+        self.__game_state = Game_state()
         self.__win = pygame.display.set_mode((screen_size, screen_size))
         self.__event_handler = Event_handler()
         self.__offset = pygame.Vector2()
@@ -21,6 +21,10 @@ class Game_controller:
     def check_all_collisions(self):
         for i in self.__game_state.kinetic_objects:
                 i.check_colisions(self.__game_state.obstacles)
+                # usado pra testar change level por enquanto
+                # x = i.check_colisions(self.__game_state.obstacles)
+                # if x == True:
+                #     self.__game_state.change_level(2)
 
     def update_all(self):
         for i in self.__game_state.kinetic_objects:

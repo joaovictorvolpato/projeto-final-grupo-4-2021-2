@@ -66,7 +66,7 @@ def main_menu():
 
 
         mx, my = pygame.mouse.get_pos()
-
+        
         if start_button.rect.collidepoint(mx, my):
             if click:
                 system.initialize()

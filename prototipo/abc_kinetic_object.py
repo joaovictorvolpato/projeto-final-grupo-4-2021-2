@@ -14,3 +14,4 @@ class Kinetic_object(ABCObject, ABC):
     @abstractmethod
     def update(self):
         pass
+

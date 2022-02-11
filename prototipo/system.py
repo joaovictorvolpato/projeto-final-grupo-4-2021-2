@@ -46,23 +46,15 @@ class System:
             for i in self.__game_state.kinetic_objects:
                 i.check_colisions(self.__game_state.obstacles)
 
+            # update
             for i in self.__game_state.kinetic_objects:
                 i.update()
 
-            # #update por causa da camera
-            # for i in self.__game_state.objects:
-            #     i.change_for_camera(self.__game_state.player.velX, self.__game_state.player.velY)
-
-            # update nos objetos ("backend")
-            # for i, real_object in enumerate(self.__game_state.objects):
-            #     real_object.update()
-            #     self.__game_state.camera_objects[i].update(real_object)
-
             # Draw
-
             self.__win.fill((12, 24, 36))
             for i in self.__game_state.objects:
                 i.draw(self.__win, self.__game_state.player)
-
+            
+            # update o display inteiro e fps
             pygame.display.flip()
             self.__clk.tick(self.__clk_speed)

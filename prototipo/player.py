@@ -58,7 +58,8 @@ class Player():
         if self.__velX != 0 and self.__velY != 0:
             self.__velX *=  1/math.sqrt(2)
             self.__velY *= 1/math.sqrt(2)
-
+    
+    # desenha um retangulo com offset para cameta
     def draw(self, win, player):
         self.__offset.x = player.rect.centerx - win.get_size()[0] / 2
         print(self.__offset)

@@ -30,9 +30,6 @@ class Tile:
     def color(self):
         return self.__color
 
-    # def update(self):
-    #     self.__rect = pygame.Rect(self.__x, self.__y, self.__size, self.__size)
-
     def draw(self, win, player):
         self.__offset.x = player.rect.centerx - win.get_size()[0] / 2
         print(self.__offset)

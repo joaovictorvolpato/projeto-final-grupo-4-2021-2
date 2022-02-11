@@ -32,7 +32,6 @@ class Tile:
 
     def draw(self, win, player):
         self.__offset.x = player.rect.centerx - win.get_size()[0] / 2
-        print(self.__offset)
         self.__offset.y = player.rect.centery - win.get_size()[1] / 2
         fake_rect = copy.deepcopy(self.__rect)
         fake_rect.topleft -= self.__offset

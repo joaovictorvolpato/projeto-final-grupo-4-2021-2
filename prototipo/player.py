@@ -62,7 +62,6 @@ class Player():
     # desenha um retangulo com offset para cameta
     def draw(self, win, player):
         self.__offset.x = player.rect.centerx - win.get_size()[0] / 2
-        print(self.__offset)
         self.__offset.y = player.rect.centery - win.get_size()[1] / 2
         fake_rect = copy.deepcopy(self.__rect)
         fake_rect.topleft -= self.__offset
@@ -114,7 +113,6 @@ class Player():
 
     def update(self):
         self.__rect = pygame.Rect(int(self.__x), int(self.__y), self.__size, self.__size)
-        print(self.__rect.x)
 
     
 

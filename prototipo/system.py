@@ -26,7 +26,7 @@ class System:
             if i in possible_commands.keys():
                 possible_commands[i] = output[i]
         return possible_commands
-
+        
     def main_loop(self):
         while True:
             self.__event_handler.key_checker()
@@ -36,24 +36,32 @@ class System:
                 pygame.quit()
                 sys.exit()
 
-            # executa os comandos dados pelo event handler
+             # executa os comandos dados pelo event handler
             for command_object in self.__game_state.command_objects:
                 OUTPUT = self.__event_handler.output
                 command_object.commands = self.__lookForCommands(OUTPUT, command_object.commands)
                 command_object.execute_commands()
 
-            #update por causa da camera
-            for i in self.__game_state.objects:
-                i.change_for_camera(self.__game_state.player.velX, self.__game_state.player.velY)
+            # colisoes
+            for i in self.__game_state.kinetic_objects:
+                i.check_colisions(self.__game_state.obstacles)
 
-            # update nos objetos
-            for i in self.__game_state.objects:
-                i.update()
+            # #update por causa da camera
+            # for i in self.__game_state.objects:
+            #     i.change_for_camera(self.__game_state.player.velX, self.__game_state.player.velY)
+
+            # update nos objetos ("backend")
+            for i, real_object in enumerate(self.__game_state.objects):
+                real_object.update()
+                self.__game_state.camera_objects[i].update(real_object)
+
+
+            # update nos 
 
             # Draw
             self.__win.fill((12, 24, 36))
-            for i in self.__game_state.objects:
-                i.draw(self.__win)
+            for i in self.__game_state.camera_objects:
+                i.draw(self.__win, self.__game_state.player)
 
             pygame.display.flip()
             self.__clk.tick(self.__clk_speed)

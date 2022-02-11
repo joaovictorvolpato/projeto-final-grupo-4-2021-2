@@ -18,6 +18,10 @@ class Player(ABCObject):
         self.__velY = 0
 
     @property
+    def rect(self):
+        return self.__rect
+    
+    @property
     def velX(self):
         return self.__velX
     
@@ -29,6 +33,23 @@ class Player(ABCObject):
     def commands(self):
         return self.__commands
 
+    @property
+    def size(self):
+        return self.__size
+
+    @property
+    def x(self):
+        return self.__x
+
+    @property
+    def y(self):
+        return self.__y
+
+    @property
+    def color(self):
+        return self.__color
+
+
     @commands.setter
     def commands(self, new_commands: dict):
         self.__commands = new_commands
@@ -39,8 +60,37 @@ class Player(ABCObject):
             self.__velX *=  1/math.sqrt(2)
             self.__velY *= 1/math.sqrt(2)
 
-    def draw(self, win):
-        pygame.draw.rect(win, self.__color, self.__rect)
+    # def draw(self, win):
+    #     pygame.draw.rect(win, self.__color, self.__rect)
+
+    # faz a logica das colisoes e retorna uma bool pra caso houve colisao
+    def check_colisions(self, obstacles: list):
+        def get_hit_list(obstacles):
+            hit = []
+            for obstacle in obstacles:
+                if self.__rect.colliderect(obstacle.rect):
+                    hit.append(obstacle)
+            return hit
+    
+        hits = get_hit_list(obstacles)
+        if len(hits) != 0:
+            OBSTACLE = hits[0].rect
+            PLAYER = self.__rect
+            COLLISION_TOLLERANCE = 10
+            COLLISION_BOTTOM = abs(OBSTACLE.top - PLAYER.bottom)
+            COLLISION_UP = abs(OBSTACLE.bottom - PLAYER.top)
+            COLLISION_LEFT = abs(OBSTACLE.right - PLAYER.left) 
+            COLLISION_RIGHT = abs(OBSTACLE.left - PLAYER.right)
+            if COLLISION_UP < COLLISION_TOLLERANCE:
+                self.__y += COLLISION_UP
+            if COLLISION_BOTTOM < COLLISION_TOLLERANCE:
+                self.__y -= COLLISION_BOTTOM
+            if COLLISION_RIGHT < COLLISION_TOLLERANCE:
+                self.__x -= COLLISION_RIGHT
+            if COLLISION_LEFT < COLLISION_TOLLERANCE:
+                self.__x += COLLISION_LEFT
+            return True
+        return False
 
     def execute_commands(self):
         self.__velX = 0
@@ -60,10 +110,6 @@ class Player(ABCObject):
 
     def update(self):
         self.__rect = pygame.Rect(int(self.__x), int(self.__y), self.__size, self.__size)
-
-    def change_for_camera(self, vel_x, vel_y):
-        self.__x -= vel_x
-        self.__y -= vel_y
 
     
 

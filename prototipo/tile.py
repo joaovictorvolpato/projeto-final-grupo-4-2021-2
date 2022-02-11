@@ -8,13 +8,29 @@ class Tile:
         self.__color = (21,10, 150)
         self.__rect = pygame.Rect(self.__x, self.__y, self.__size, self.__size)
 
-    def change_for_camera(self, vel_x, vel_y):
-        self.__x -= vel_x
-        self.__y -= vel_y
+    @property
+    def rect(self):
+        return self.__rect
+
+    @property
+    def size(self):
+        return self.__size
+
+    @property
+    def x(self):
+        return self.__x
+
+    @property
+    def y(self):
+        return self.__y
+    
+    @property
+    def color(self):
+        return self.__color
 
     def update(self):
         self.__rect = pygame.Rect(self.__x, self.__y, self.__size, self.__size)
 
-    def draw(self, win):
-        pygame.draw.rect(win, self.__color, self.__rect)
+    # def draw(self, win):
+    #     pygame.draw.rect(win, self.__color, self.__rect)
     

@@ -14,7 +14,6 @@ class Player():
         self.__rect = pygame.Rect(self.__x, self.__y, size, size)
         self.__velX = 0
         self.__velY = 0
-        self.__offset = pygame.Vector2()
 
     @property
     def rect(self):
@@ -60,11 +59,9 @@ class Player():
             self.__velY *= 1/math.sqrt(2)
     
     # desenha um retangulo com offset para cameta
-    def draw(self, win, player):
-        self.__offset.x = player.rect.centerx - win.get_size()[0] / 2
-        self.__offset.y = player.rect.centery - win.get_size()[1] / 2
+    def draw(self, win, offset):
         fake_rect = copy.deepcopy(self.__rect)
-        fake_rect.topleft -= self.__offset
+        fake_rect.topleft -= offset
         pygame.draw.rect(win, self.__color, fake_rect)
     # faz a logica das colisoes e retorna uma bool pra caso houve colisao
     def check_colisions(self, obstacles: list):

@@ -33,8 +33,9 @@ class Game_controller:
         for i in self.__game_state.objects:
             i.draw(self.__win, self.__offset)
 
-    def get_camera_offset(self):
-        PLAYER = self.__game_state.player
+    #  implementar dps para camera para de seguir perto das paredes
+    # def get_camera_offset(self):
+    #     PLAYER = self.__game_state.player
         
 
 

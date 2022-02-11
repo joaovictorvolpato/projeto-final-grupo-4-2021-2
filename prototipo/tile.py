@@ -1,5 +1,6 @@
 from tempDB import *
 import pygame
+import copy
 class Tile:
     def __init__(self, x, y):
         self.__x = x
@@ -7,6 +8,7 @@ class Tile:
         self.__size = SIZE
         self.__color = (21,10, 150)
         self.__rect = pygame.Rect(self.__x, self.__y, self.__size, self.__size)
+        self.__offset = pygame.Vector2()
 
     @property
     def rect(self):
@@ -28,9 +30,13 @@ class Tile:
     def color(self):
         return self.__color
 
-    def update(self):
-        self.__rect = pygame.Rect(self.__x, self.__y, self.__size, self.__size)
+    # def update(self):
+    #     self.__rect = pygame.Rect(self.__x, self.__y, self.__size, self.__size)
 
-    # def draw(self, win):
-    #     pygame.draw.rect(win, self.__color, self.__rect)
-    
+    def draw(self, win, player):
+        self.__offset.x = player.rect.centerx - win.get_size()[0] / 2
+        print(self.__offset)
+        self.__offset.y = player.rect.centery - win.get_size()[1] / 2
+        fake_rect = copy.deepcopy(self.__rect)
+        fake_rect.topleft -= self.__offset
+        pygame.draw.rect(win, self.__color, fake_rect)

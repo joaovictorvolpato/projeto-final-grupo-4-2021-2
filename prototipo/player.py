@@ -1,11 +1,9 @@
 import pygame, sys
 import math
-from abc_object import ABCObject
+import copy
 
-
-class Player(ABCObject):
+class Player():
     def __init__(self, initial_x: int, initial_y: int, size: int, speed:int):
-        super().__init__(initial_x, initial_y, size)
         #sprites
         self.__x = initial_x
         self.__y = initial_y
@@ -16,6 +14,7 @@ class Player(ABCObject):
         self.__rect = pygame.Rect(self.__x, self.__y, size, size)
         self.__velX = 0
         self.__velY = 0
+        self.__offset = pygame.Vector2()
 
     @property
     def rect(self):
@@ -60,9 +59,13 @@ class Player(ABCObject):
             self.__velX *=  1/math.sqrt(2)
             self.__velY *= 1/math.sqrt(2)
 
-    # def draw(self, win):
-    #     pygame.draw.rect(win, self.__color, self.__rect)
-
+    def draw(self, win, player):
+        self.__offset.x = player.rect.centerx - win.get_size()[0] / 2
+        print(self.__offset)
+        self.__offset.y = player.rect.centery - win.get_size()[1] / 2
+        fake_rect = copy.deepcopy(self.__rect)
+        fake_rect.topleft -= self.__offset
+        pygame.draw.rect(win, self.__color, fake_rect)
     # faz a logica das colisoes e retorna uma bool pra caso houve colisao
     def check_colisions(self, obstacles: list):
         def get_hit_list(obstacles):
@@ -110,6 +113,7 @@ class Player(ABCObject):
 
     def update(self):
         self.__rect = pygame.Rect(int(self.__x), int(self.__y), self.__size, self.__size)
+        print(self.__rect.x)
 
     
 

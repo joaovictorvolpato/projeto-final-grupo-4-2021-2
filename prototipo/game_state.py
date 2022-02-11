@@ -6,9 +6,9 @@ class Game_state:
         self.__tile_map = Tile_map()
         self.__player =  Player(playerX - 60, playerY - 60, 120, 4)
         self.__objects = [self.__player] + self.__tile_map.tile_list
-        self.__camera_objects = []
-        for i in self.__objects:
-            self.__camera_objects.append(Camera_object(i))
+        # self.__camera_objects = []
+        # for i in self.__objects:
+        #     self.__camera_objects.append(Camera_object(i))
         self.__obstacles = self.__tile_map.tile_list
         self.__kinetic_objects = [self.__player]
         self.__command_objects = [self.__player]

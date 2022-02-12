@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="Menu_níveis.svg"
+   inkscape:export-filename="C:\Users\Notebook\Desktop\Archive\UFSC\2021.2 Programação orientada a objetos 2\Projeto_final\projeto-final-grupo-4-2021-2\GUI\Menu_níveis.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   enable-background="new">
+  <defs
+     id="defs2">
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter2350">
+      <feBlend
+         inkscape:collect="always"
+         mode="soft-light"
+         in2="BackgroundImage"
+         id="feBlend2352" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.5"
+     inkscape:cx="472.32829"
+     inkscape:cy="539.37571"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer5"
+     showgrid="false"
+     inkscape:window-width="800"
+     inkscape:window-height="786"
+     inkscape:window-x="7"
+     inkscape:window-y="196"
+     inkscape:window-maximized="0"
+     inkscape:snap-global="false"
+     inkscape:snap-midpoints="true" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Quadrado_de_fundo"
+     style="display:inline"
+     sodipodi:insensitive="true">
+    <rect
+       style="display:inline;opacity:1;fill:#896800;fill-opacity:1;fill-rule:evenodd;stroke:#29f43f;stroke-width:0.26499999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+       id="rect1191"
+       width="158.75"
+       height="158.75"
+       x="23.056547"
+       y="56.985119" />
+  </g>
+  <g
+     inkscape:label="Pergaminho"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="display:inline"
+     sodipodi:insensitive="true">
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot1093"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       transform="scale(0.26458333)"><flowRegion
+         id="flowRegion1095"><rect
+           id="rect1097"
+           width="194.28572"
+           height="92.14286"
+           x="157.14285"
+           y="366.80539" /></flowRegion><flowPara
+         style="font-size:24px"
+         id="flowPara1117"><flowSpan
+           style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0.5;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';text-align:center;text-anchor:middle"
+           id="flowSpan1101" /></flowPara></flowRoot>    <path
+       style="opacity:0.95999995;fill:#ffc73f;fill-opacity:1;fill-rule:evenodd;stroke:#1b0000;stroke-width:8.08122063;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+       d="m 605.62085,245.0726 c -79.79761,7.40871 -159.12749,22.5683 -236.12317,44.70714 -47.7687,5.05248 -97.04915,4.01783 -144.46489,1.4943 -32.83039,-13.26091 -66.64509,-33.89685 -102.61211,-33.87442 -1.12647,95.23324 18.45926,189.40775 38.82774,282.07721 9.61409,81.06333 3.74845,165.82505 -31.10165,240.55836 58.26347,-1.20822 117.11742,-4.50532 174.33023,8.46791 38.25474,4.46443 76.69474,-0.64068 113.07396,-12.20075 70.20602,-2.95716 141.42759,-5.56339 211.25604,3.13305 9.39102,3.52075 28.48097,7.89148 21.88402,-10.14096 0.94761,-41.05963 -34.69583,-73.23246 -26.74176,-114.64387 1.46916,-130.14643 -1.88414,-261.93345 25.21074,-389.88788 6.13744,-27.14209 -28.09699,-17.7671 -43.53915,-19.69009 z"
+       id="path2111"
+       inkscape:connector-curvature="0"
+       transform="scale(0.26458333)" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer7"
+     inkscape:label="Traços_do_caminhp"
+     sodipodi:insensitive="true">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2.64583325;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 84.263628,115.08238 c 4.45779,-0.69807 5.375067,2.40283 9.069299,6.51528"
+       id="path2131"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2.64583325;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 96.512755,123.15219 c 2.621066,3.926 6.046105,4.41833 8.915575,6.51527"
+       id="path2133"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2.64583325;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 107.30056,129.9341 c 5.10049,3.51473 1.80526,12.1983 14.0067,11.68307"
+       id="path2135"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2.64583325;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 135.99583,158.35833 c -3.2951,9.26972 -6.54631,5.42715 -11.1125,9.52501"
+       id="path2376"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2.64583325;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 122.8498,169.46468 c -7.26386,1.5968 -6.8109,10.71882 -13.75834,1.05834"
+       id="path2376-0"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2.64583325;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 107.15625,168.14791 c -4.21781,-3.02468 -7.783273,-2.77081 -12.170834,-4.23333"
+       id="path2393"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2.64583325;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 93.260376,162.40839 c -2.505311,-2.59992 -7.254898,-3.05163 -10.329198,-4.34477"
+       id="path2397"
+       inkscape:connector-curvature="0" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="Nível_1"
+     style="display:inline"
+     sodipodi:insensitive="true">
+    <rect
+       y="108.71852"
+       x="48.484478"
+       height="20.259727"
+       width="30.788383"
+       id="rect2270-5"
+       style="display:inline;opacity:1;fill:#896800;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.31759417;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal" />
+    <flowRoot
+       transform="matrix(0.15229656,0,0,0.15229656,29.510192,34.628305)"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none"
+       id="flowRoot2278-4"
+       xml:space="preserve"><flowRegion
+         id="flowRegion2274-4"><rect
+           y="533.23395"
+           x="152.85715"
+           height="62.857143"
+           width="248.57144"
+           id="rect2272-4" /></flowRegion><flowPara
+         id="flowPara2276-9">Nível 1</flowPara></flowRoot>  </g>
+  <g
+     style="display:inline"
+     inkscape:label="Nível_3"
+     id="g2280"
+     inkscape:groupmode="layer">
+    <rect
+       y="143.6888"
+       x="48.813126"
+       height="20.259727"
+       width="30.788383"
+       id="rect2270"
+       style="display:inline;opacity:1;fill:#896800;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.31759417;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal" />
+    <flowRoot
+       transform="matrix(0.15229656,0,0,0.15229656,29.838843,69.598598)"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none"
+       id="flowRoot2278"
+       xml:space="preserve"><flowRegion
+         id="flowRegion2274"><rect
+           y="533.23395"
+           x="152.85715"
+           height="62.857143"
+           width="248.57144"
+           id="rect2272" /></flowRegion><flowPara
+         id="flowPara2415">Nível 3</flowPara></flowRoot>    <path
+       style="fill:none;stroke:#000000;stroke-width:2.64583333;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 63.313217,168.57463 c -3.799806,3.91824 -2.924375,9.60638 -3.887996,12.77182"
+       id="path2419"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#ff0000;stroke-width:2.64583333;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 51.936795,188.14457 c 6.103243,2.65743 10.903153,8.31366 15.794037,12.04296"
+       id="path2421"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#ff0000;stroke-width:2.64583333;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 50.159966,200.97723 c 5.773791,-3.96855 11.654336,-8.84122 17.176015,-13.03008"
+       id="path2423"
+       inkscape:connector-curvature="0" />
+  </g>
+  <g
+     sodipodi:insensitive="true"
+     inkscape:groupmode="layer"
+     id="g2413"
+     inkscape:label="Nível_2 copy"
+     style="display:inline">
+    <rect
+       style="display:inline;opacity:1;fill:#896800;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.31759417;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+       id="rect2403"
+       width="30.788383"
+       height="20.259727"
+       x="125.1453"
+       y="133.21184" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot2411"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.15229656,0,0,0.15229656,106.17102,59.121633)"><flowRegion
+         id="flowRegion2407"><rect
+           id="rect2405"
+           width="248.57144"
+           height="62.857143"
+           x="152.85715"
+           y="533.23395" /></flowRegion><flowPara
+         id="flowPara2409">Nível 2</flowPara></flowRoot>  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer5"
+     inkscape:label="Seta_de_voltar"
+     style="display:inline;filter:url(#filter2350)">
+    <g
+       style="display:inline;fill:#896800;fill-opacity:1;stroke:#896800;stroke-opacity:1;filter:url(#filter2350)"
+       id="g2362"
+       transform="matrix(0.48630141,0,0,0.48630141,22.875879,-3.0824716)">
+      <path
+         sodipodi:nodetypes="cccc"
+         inkscape:connector-curvature="0"
+         id="path2314"
+         d="M 57.811458,176.2177 45.508332,185.61042 57.679166,195.4 Z"
+         style="fill:#896800;fill-opacity:1;stroke:#896800;stroke-width:2.64583325;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path2316"
+         d="M 58.076041,186.00729 H 84.137499"
+         style="fill:#896800;fill-opacity:1;stroke:#896800;stroke-width:5.29166651;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         sodipodi:nodetypes="cc" />
+    </g>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3001"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.13370024,0,0,0.13370024,27.175482,52.129996)"><flowRegion
+         id="flowRegion3003"><rect
+           id="rect3005"
+           width="147.0782"
+           height="65.053833"
+           x="149.90663"
+           y="306.51846" /></flowRegion><flowPara
+         id="flowPara3007">Voltar</flowPara></flowRoot>  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Título"
+     style="display:inline">
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot1151"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.20107479,0,0,0.20107479,48.991494,-3.6592531)"><flowRegion
+         id="flowRegion1153"><rect
+           id="rect1155"
+           width="351.42856"
+           height="179.28572"
+           x="70"
+           y="446.80539" /></flowRegion><flowPara
+         id="flowPara1157"
+         style="text-align:center;text-anchor:middle">Níveis</flowPara></flowRoot>  </g>
+</svg>

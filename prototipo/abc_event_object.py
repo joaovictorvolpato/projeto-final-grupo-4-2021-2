@@ -9,5 +9,5 @@ class Event_object(ABCObject, ABC):
         pass
 
     @abstractmethod
-    def check_player_collisions(self):
+    def check_player_collisions(self, player):
         pass

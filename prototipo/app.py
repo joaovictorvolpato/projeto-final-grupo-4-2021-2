@@ -1,3 +1,3 @@
 from system import System
-system = System(1200, 'teste', 60)
+system = System(600, 'teste', 60)
 system.initialize()

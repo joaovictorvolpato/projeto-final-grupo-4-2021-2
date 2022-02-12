@@ -11,7 +11,7 @@ class System:
         self.__title = title
         self.__clk_speed = clk_speed
         self.__clk = pygame.time.Clock()
-        self._game_controller = Game_controller(self.__size)
+        self.__game_controller = Game_controller(self.__size)
 
     def initialize(self):
         pygame.init()
@@ -22,16 +22,19 @@ class System:
     def main_loop(self):
         while True:
             # comandos
-            self._game_controller.execute_all_commands()
+            self.__game_controller.execute_all_commands()
 
             # colisoes
-            self._game_controller.check_all_collisions()
+            self.__game_controller.check_all_collisions()
+
+            # eventos
+            self.__game_controller.check_all_events_obj()
 
             # update
-            self._game_controller.update_all()
+            self.__game_controller.update_all()
 
             # Draw
-            self._game_controller.draw_all()
+            self.__game_controller.draw_all()
 
             # update o display inteiro e fps
             pygame.display.flip()

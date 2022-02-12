@@ -14,6 +14,7 @@ class Game_state:
         self.__obstacles = self.__tile_map.obstacle_list
         self.__kinetic_objects = [self.__player]
         self.__command_objects = [self.__player]
+        self.__event_objects = self.__tile_map.event_list
 
 
     def change_level(self, next_level: int):
@@ -28,6 +29,7 @@ class Game_state:
         self.__obstacles = self.__tile_map.obstacle_list
         self.__kinetic_objects = [self.__player]
         self.__command_objects = [self.__player]
+        self.__event_objects = self.__tile_map.event_list
 
 
     @property
@@ -45,3 +47,6 @@ class Game_state:
     @property
     def obstacles(self):
         return self.__obstacles
+    @property
+    def event_objects(self):
+        return self.__event_objects

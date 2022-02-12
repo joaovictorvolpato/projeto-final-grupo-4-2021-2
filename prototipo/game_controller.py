@@ -20,7 +20,7 @@ class Game_controller:
 
     def check_all_collisions(self):
         for i in self.__game_state.kinetic_objects:
-                i.check_colisions(self.__game_state.obstacles)
+                i.check_collisions(self.__game_state.obstacles)
                 # usado pra testar change level por enquanto
                 # x = i.check_colisions(self.__game_state.obstacles)
                 # if x == True:
@@ -41,7 +41,13 @@ class Game_controller:
     # def get_camera_offset(self):
     #     PLAYER = self.__game_state.player
         
-
+    def check_all_events_obj(self):
+        for i in self.__game_state.event_objects:
+            output = i.check_player_collisions(self.__game_state.player)
+            print(output)
+            #mudar para checar inteiro dps asdflkj
+            if output == 1 or output == 2:
+                self.game_state.change_level(output)
 
     def execute_all_commands(self):
         self.__event_handler.key_checker()

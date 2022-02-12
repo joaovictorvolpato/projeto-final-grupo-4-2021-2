@@ -66,7 +66,7 @@ class Player(Kinetic_object, Command_object):
         fake_rect.topleft -= offset
         pygame.draw.rect(win, self.__color, fake_rect)
     # faz a logica das colisoes e retorna uma bool pra caso houve colisao
-    def check_colisions(self, obstacles: list):
+    def check_collisions(self, obstacles: list):
         def get_hit_list(obstacles):
             hit = []
             for obstacle in obstacles:

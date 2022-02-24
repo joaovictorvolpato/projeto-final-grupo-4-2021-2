@@ -1,6 +1,4 @@
 import pygame
-import sys
-from event_handler import Event_handler
 from game_controller import Game_controller
 
 
@@ -22,15 +20,12 @@ class System:
         while True:
             # comandos
             self.__game_controller.execute_all_commands()
-
-            # colisoes
-            self.__game_controller.check_all_collisions()
+    
+            # movimentos e colisoes
+            self.__game_controller.move_all()
 
             # eventos
             self.__game_controller.check_all_events_obj()
-
-            # update
-            self.__game_controller.update_all()
 
             # Draw
             self.__game_controller.draw_all()

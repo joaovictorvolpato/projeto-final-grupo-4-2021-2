@@ -1,5 +1,4 @@
 from dao import DAO
-import json
 class Level_dao(DAO):
     def __init__(self, datasource, level: int):
         super().__init__(datasource)

@@ -11,10 +11,7 @@ class Kinetic_object(ABCObject, ABC):
     def speed(self):
         return self.__speed
 
-    @abstractmethod
-    def check_collisions(self, obstacles: list):
-        pass
 
     @abstractmethod
-    def update(self):
+    def move(self):
         pass

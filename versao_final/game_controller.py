@@ -1,4 +1,3 @@
-from http.client import GATEWAY_TIMEOUT
 import pygame
 import sys
 from game_state import Game_state
@@ -6,7 +5,7 @@ from event_handler import Event_handler
 import pygame
 class Game_controller:
     def __init__(self, screen_size):
-        self.__game_state = Game_state()
+        self.__game_state = Game_state(1)
         self.__win = pygame.display.set_mode((screen_size, screen_size))
         self.__event_handler = Event_handler()
         self.__offset = pygame.Vector2()
@@ -18,17 +17,9 @@ class Game_controller:
                 possible_commands[i] = output[i]
         return possible_commands
 
-    def check_all_collisions(self):
+    def move_all(self):
         for i in self.__game_state.kinetic_objects:
-                i.check_collisions(self.__game_state.obstacles)
-                # usado pra testar change level por enquanto
-                # x = i.check_colisions(self.__game_state.obstacles)
-                # if x == True:
-                #     self.__game_state.change_level(2)
-
-    def update_all(self):
-        for i in self.__game_state.kinetic_objects:
-                i.update()
+                i.move()
 
     def draw_all(self):
         self.__win.fill((12, 24, 36))
@@ -44,7 +35,6 @@ class Game_controller:
     def check_all_events_obj(self):
         for i in self.__game_state.event_objects:
             output = i.check_player_collisions(self.__game_state.player)
-            print(output)
             #mudar para checar inteiro dps asdflkj
             if output == 1 or output == 2:
                 self.game_state.change_level(output)

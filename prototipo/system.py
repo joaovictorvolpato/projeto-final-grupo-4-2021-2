@@ -1,4 +1,3 @@
-from os import POSIX_SPAWN_CLOSE
 import pygame
 import sys
 from event_handler import Event_handler

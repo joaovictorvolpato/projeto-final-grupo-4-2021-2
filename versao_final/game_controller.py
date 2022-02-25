@@ -37,7 +37,7 @@ class Game_controller:
             output = i.check_player_collisions(self.__game_state.player)
             #mudar para checar inteiro dps asdflkj
             if output == 1 or output == 2:
-                self.game_state.change_level(output)
+                self.__game_state.change_level(output)
 
     def execute_all_commands(self):
         self.__event_handler.key_checker()
@@ -50,11 +50,5 @@ class Game_controller:
         # executa os comandos dados pelo event handler
         for command_object in self.__game_state.command_objects:
             OUTPUT = self.__event_handler.output
-            command_object.commands = self.__lookForCommands(OUTPUT, command_object.commands)
+            command_object.change_commands(OUTPUT)
             command_object.execute_commands()
-
-
-    #temp
-    @property
-    def game_state(self):
-        return self.__game_state

@@ -3,33 +3,7 @@ import copy
 from abc_object import ABCObject
 class Tile(ABCObject):
     def __init__(self, initial_x: int, initial_y: int, size: int, color):
-        super().__init__(initial_x, initial_y, size)
-        self.__size = size
-        self.__color = color
-        self.__rect = pygame.Rect(initial_x, initial_y, self.__size, self.__size)
-        # self.__offset = pygame.Vector2()
+        super().__init__(initial_x, initial_y, size, color)
+        # self._offset = pygame.Vector2()
 
-    @property
-    def rect(self):
-        return self.__rect
-
-    @property
-    def size(self):
-        return self.__size
-
-    @property
-    def x(self):
-        return self.__x
-
-    @property
-    def y(self):
-        return self.__y
     
-    @property
-    def color(self):
-        return self.__color
-
-    def draw(self, win, offset):
-        fake_rect = copy.deepcopy(self.__rect)
-        fake_rect.topleft -= offset
-        pygame.draw.rect(win, self.__color, fake_rect)

@@ -1,4 +1,5 @@
 from player import Player
+from enemy import Enemy
 from level_dao import Level_dao
 from tile_map import Tile_map
 class Game_state:
@@ -7,12 +8,17 @@ class Game_state:
         PLAYERSTART = self.__level_dao.get("player_start_position")
         PLAYERSIZE = self.__level_dao.get("player_size")
         PLAYERSPEED = self.__level_dao.get("player_speed")
+        ENEMYSTART = self.__level_dao.get("enemy_start_position")
+        ENEMYSIZE = self.__level_dao.get("enemy_size")
+        ENEMYSPEED = self.__level_dao.get("enemy_speed")
+
 
         self.__tile_map = Tile_map(self.__level_dao.get("tilemap"), self.__level_dao.get("tilesize"))
         self.__obstacles = self.__tile_map.obstacle_list
         self.__player =  Player(PLAYERSTART[0], PLAYERSTART[1], PLAYERSIZE, PLAYERSPEED, self.__obstacles)
-        self.__objects = [self.__player] + self.__tile_map.tile_list
-        self.__kinetic_objects = [self.__player]
+        self.__enemy = Enemy(ENEMYSTART[0], ENEMYSTART[1], ENEMYSIZE, ENEMYSPEED, self.__obstacles)
+        self.__objects = [self.__player, self.__enemy] + self.__tile_map.tile_list
+        self.__kinetic_objects = [self.__player, self.__enemy]
         self.__command_objects = [self.__player]
         self.__event_objects = self.__tile_map.event_list
 

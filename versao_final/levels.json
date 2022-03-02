@@ -4,6 +4,9 @@
         "player_start_position": [250, 400],
         "player_size": 32,
         "player_speed": 8,
+        "enemy_start_position":[60, 350],
+        "enemy_size": 50,
+        "enemy_speed": 6,
         "tilesize": 32,
         "tilemap": [
             ["x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"],
@@ -39,6 +42,9 @@
         "player_start_position": [250, 400],
         "player_size": 60,
         "player_speed": 8,
+        "enemy_start_position":[230, 350],
+        "enemy_size": 32,
+        "enemy_speed": 6,
         "tilesize": 32,
         "tilemap": [
             ["x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"],

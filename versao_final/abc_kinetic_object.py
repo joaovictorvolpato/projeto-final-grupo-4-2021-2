@@ -16,7 +16,7 @@ class Kinetic_object(ABCObject, ABC):
     @property
     def velX(self):
         return self._velX
-    
+
     @property
     def velY(self):
         return self._velY

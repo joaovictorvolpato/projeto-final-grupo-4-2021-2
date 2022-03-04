@@ -1,20 +1,24 @@
-import pygame, sys
+import pygame
+import sys
 # Transforma inputs em comandos para o jogo
+
+
 class Event_handler:
     def __init__(self):
         # teclas que fazem coisas no jogo
-        self.__event_list = ([pygame.QUIT, pygame.KEYDOWN, pygame.K_RIGHT, 
-        pygame.K_LEFT, pygame.K_UP, pygame.K_DOWN, pygame.KEYUP])
+        self.__event_list = ([pygame.QUIT, pygame.KEYDOWN, pygame.K_RIGHT,
+                              pygame.K_LEFT, pygame.K_UP, pygame.K_DOWN, pygame.KEYUP])
         # output desss teclas
-        self.__output = {'up': False, 'down': False, 'right': False, 'left': False, 'quit': False}
+        self.__output = {'up': False, 'down': False,
+                         'right': False, 'left': False, 'quit': False}
 
     # getters
     @property
     def output(self):
         return self.__output
 
-
     # cuida de novos eventos, modificando os outputs
+
     def key_checker(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -37,4 +41,3 @@ class Event_handler:
                     self.__output['up'] = False
                 if event.key == pygame.K_DOWN:
                     self.__output['down'] = False
-    

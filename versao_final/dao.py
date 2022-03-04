@@ -24,10 +24,9 @@ class DAO(ABC):
         self._object_cache = json.load(file)
         file.close()
 
-
     def get(self, key):
         try:
             return self._object_cache[key]
-        
+
         except KeyError:
             print('Chave não disponível')

@@ -15,14 +15,16 @@ class System:
         pygame.display.set_caption(self.__title)
         self.main_loop()
 
-        
     def main_loop(self):
         while True:
             # comandos
             self.__game_controller.execute_all_commands()
-    
+
             # movimentos e colisoes
             self.__game_controller.move_all()
+
+            # colisoes de inimigos com player
+            self.__game_controller.check_enemy_player_all()
 
             # eventos
             self.__game_controller.check_all_events_obj()

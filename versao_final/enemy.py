@@ -1,6 +1,7 @@
 import pygame
 import math
 from abc_kinetic_object import Kinetic_object
+from player import Player
 
 
 class Enemy(Kinetic_object):
@@ -12,18 +13,22 @@ class Enemy(Kinetic_object):
         self._velX = self.speed*0.5
         self._velY = self.speed*0.25
 
-
     def normalize(self):
         if self._velX != 0 and self._velY != 0:
             self._velX *= 1/math.sqrt(2)
             self._velY *= 1/math.sqrt(2)
-
 
     def move(self):
         self._rect.x += self._velX
         self._rect.y += self._velY
         self.check_collisions()
 
+    def event(self):
+        print('player collision')
+
+    def check_player_collision(self, player_rect):
+        if self._rect.colliderect(player_rect):
+            self.event()
 
     def check_collisions(self):
         for obstacle in self._obstacles:
@@ -49,9 +54,8 @@ class Enemy(Kinetic_object):
                     print("colidiu cima")
                     self.change_directionsY()
 
-
     def change_directionsX(self):
         self._velX = -1 * self._velX
 
     def change_directionsY(self):
-        self._velY = -1 *self._velY 
+        self._velY = -1 * self._velY

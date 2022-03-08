@@ -8,6 +8,7 @@ class Kinetic_object(ABCObject, ABC):
         self._speed = speed
         self._velX = 0
         self._velY = 0
+        self._has_collided = False
 
     @property
     def speed(self):
@@ -37,5 +38,9 @@ class Kinetic_object(ABCObject, ABC):
             self._speed = new_speed
 
     @abstractmethod
-    def move(self):
+    def move_request(self):
+        pass
+
+    @abstractmethod
+    def handle_collision(self):
         pass

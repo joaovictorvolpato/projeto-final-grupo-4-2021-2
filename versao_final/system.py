@@ -17,20 +17,22 @@ class System:
 
     def main_loop(self):
         while True:
-            # comandos
-            self.__game_controller.execute_all_commands()
 
-            # movimentos e colisoes
-            self.__game_controller.move_all()
+            self.__game_controller.execute_game_routine()
+            # # comandos
+            # self.__game_controller.execute_all_commands()
 
-            # colisoes de inimigos com player
-            self.__game_controller.check_enemy_player_all()
+            # # movimentos e colisoes
+            # self.__game_controller.move_all()
 
-            # eventos
-            self.__game_controller.check_all_events_obj()
+            # # colisoes de inimigos com player
+            # self.__game_controller.check_enemy_player_all()
 
-            # Draw
-            self.__game_controller.draw_all()
+            # # eventos
+            # self.__game_controller.check_all_events_obj()
+
+            # # Draw
+            # self.__game_controller.draw_all()
 
             # update o display inteiro e fps
             pygame.display.flip()

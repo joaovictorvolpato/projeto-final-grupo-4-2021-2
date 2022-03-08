@@ -1,10 +1,12 @@
+from tokenize import Single
+from abc_singleton import Singleton
 from player import Player
 from enemy import Enemy
 from level_dao import Level_dao
 from tile_map import Tile_map
 
 
-class Game_state:
+class Game_state(metaclass=Singleton):
     def __init__(self, level):
         self.__level_dao = Level_dao('levels.json', level)
         PLAYERSTART = self.__level_dao.get("player_start_position")
@@ -57,3 +59,9 @@ class Game_state:
     @property
     def enemies(self):
         return self.__enemies
+
+
+# singleton test
+# game_state = Game_state(1)
+# game_state2 = Game_state(2)
+# print(id(game_state) == id(game_state2))

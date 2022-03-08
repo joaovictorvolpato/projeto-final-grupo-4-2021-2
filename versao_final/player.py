@@ -16,36 +16,40 @@ class Player(Kinetic_object, Command):
         self._obstacles = obstacles
 
     # usar para normalizar os vetores de velocidade, caso contrario, anda mais rápido nas diagonais
-    def normalize(self):
+    def __normalize(self):
         if self._velX != 0 and self._velY != 0:
             self._velX *= 1/math.sqrt(2)
             self._velY *= 1/math.sqrt(2)
 
-
     # Colisoes, funciona se nao colidir com objetos em movimento
-    def move(self):
-        self.normalize()
-        self._rect.x += self._velX
-        self.check_collisions('horizontal')
-        self._rect.y += self._velY
-        self.check_collisions('vertical')
 
-    def check_collisions(self, direction):
-        if direction == 'horizontal':
-            for obstacle in self._obstacles:
-                if obstacle.rect.colliderect(self._rect):
-                    if self._velX > 0:  # direita
-                        self._rect.right = obstacle.rect.left
-                    elif self._velX < 0:  # esquerda
-                        self._rect.left = obstacle.rect.right
+    def move_request(self):
+        # self.normalize()
+        # self._rect.x += self._velX
+        # self.check_collisions('horizontal')
+        # self._rect.y += self._velY
+        # self.check_collisions('vertical')
+        return(self._velX, self._velY)
 
-        if direction == 'vertical':
-            for obstacle in self._obstacles:
-                if obstacle.rect.colliderect(self._rect):
-                    if self._velY > 0:  # baixo
-                        self._rect.bottom = obstacle.rect.top
-                    elif self._velY < 0:  # cima
-                        self._rect.top = obstacle.rect.bottom
+    def handle_collision(self, axis):
+        print('player colidiu')
+
+    # def check_collisions(self, direction):
+    #     if direction == 'horizontal':
+    #         for obstacle in self._obstacles:
+    #             if obstacle.rect.colliderect(self._rect):
+    #                 if self._velX > 0:  # direita
+    #                     self._rect.right = obstacle.rect.left
+    #                 elif self._velX < 0:  # esquerda
+    #                     self._rect.left = obstacle.rect.right
+
+    #     if direction == 'vertical':
+    #         for obstacle in self._obstacles:
+    #             if obstacle.rect.colliderect(self._rect):
+    #                 if self._velY > 0:  # baixo
+    #                     self._rect.bottom = obstacle.rect.top
+    #                 elif self._velY < 0:  # cima
+    #                     self._rect.top = obstacle.rect.bottom
 
     def change_facing_direction(self):
         # so apertando para direita
@@ -73,3 +77,4 @@ class Player(Kinetic_object, Command):
             self._velY = -self._speed
         if self._commands['down'] and not self._commands['up']:
             self._velY = self._speed
+        self.__normalize()

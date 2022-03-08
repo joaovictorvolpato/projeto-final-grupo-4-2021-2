@@ -19,21 +19,6 @@ class System:
         while True:
 
             self.__game_controller.execute_game_routine()
-            # # comandos
-            # self.__game_controller.execute_all_commands()
 
-            # # movimentos e colisoes
-            # self.__game_controller.move_all()
-
-            # # colisoes de inimigos com player
-            # self.__game_controller.check_enemy_player_all()
-
-            # # eventos
-            # self.__game_controller.check_all_events_obj()
-
-            # # Draw
-            # self.__game_controller.draw_all()
-
-            # update o display inteiro e fps
             pygame.display.flip()
             self.__clk.tick(self.__clk_speed)

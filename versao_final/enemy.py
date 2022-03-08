@@ -32,37 +32,3 @@ class Enemy(Kinetic_object):
 
     def event(self):
         print('player collision')
-
-    def check_player_collision(self, player_rect):
-        if self._rect.colliderect(player_rect):
-            self.event()
-
-    # def check_collisions(self):
-    #     for obstacle in self._obstacles:
-    #         if obstacle.rect.colliderect(self._rect):
-    #             print(self.velX)
-    #             if self._velX > 0:  # direita
-    #                 self._rect.right = obstacle.rect.left
-    #                 print("colidiu direita")
-    #                 self.change_directionsX()
-    #             elif self._velX < 0:  # esquerda
-    #                 self._rect.left = obstacle.rect.right
-    #                 print("colidiu esquerda")
-    #                 self.change_directionsX()
-
-    #     for obstacle in self._obstacles:
-    #         if obstacle.rect.colliderect(self._rect):
-    #             if self._velY > 0:  # baixo
-    #                 self._rect.bottom = obstacle.rect.top
-    #                 print("colidiu baixo")
-    #                 self.change_directionsY()
-    #             elif self._velY < 0:  # cima
-    #                 self._rect.top = obstacle.rect.bottom
-    #                 print("colidiu cima")
-    #                 self.change_directionsY()
-
-    def change_directionsX(self):
-        self._velX = -1 * self._velX
-
-    def change_directionsY(self):
-        self._velY = -1 * self._velY

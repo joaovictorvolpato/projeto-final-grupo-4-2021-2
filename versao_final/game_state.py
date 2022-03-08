@@ -59,9 +59,3 @@ class Game_state(metaclass=Singleton):
     @property
     def enemies(self):
         return self.__enemies
-
-
-# singleton test
-# game_state = Game_state(1)
-# game_state2 = Game_state(2)
-# print(id(game_state) == id(game_state2))

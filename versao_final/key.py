@@ -1,6 +1,5 @@
 from abc_event_object import Event_object
-import copy
-import pygame
+
 
 class Key(Event_object):
     def __init__(self, initial_x: int, initial_y: int, size: int, next_level: int):

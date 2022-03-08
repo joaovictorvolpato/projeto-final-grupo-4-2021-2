@@ -1,6 +1,4 @@
-import pygame
 import math
-import copy
 from abc_command import Command
 from abc_kinetic_object import Kinetic_object
 
@@ -21,35 +19,12 @@ class Player(Kinetic_object, Command):
             self._velX *= 1/math.sqrt(2)
             self._velY *= 1/math.sqrt(2)
 
-    # Colisoes, funciona se nao colidir com objetos em movimento
-
     def move_request(self):
-        # self.normalize()
-        # self._rect.x += self._velX
-        # self.check_collisions('horizontal')
-        # self._rect.y += self._velY
-        # self.check_collisions('vertical')
+
         return(self._velX, self._velY)
 
     def handle_collision(self, axis):
         print('player colidiu')
-
-    # def check_collisions(self, direction):
-    #     if direction == 'horizontal':
-    #         for obstacle in self._obstacles:
-    #             if obstacle.rect.colliderect(self._rect):
-    #                 if self._velX > 0:  # direita
-    #                     self._rect.right = obstacle.rect.left
-    #                 elif self._velX < 0:  # esquerda
-    #                     self._rect.left = obstacle.rect.right
-
-    #     if direction == 'vertical':
-    #         for obstacle in self._obstacles:
-    #             if obstacle.rect.colliderect(self._rect):
-    #                 if self._velY > 0:  # baixo
-    #                     self._rect.bottom = obstacle.rect.top
-    #                 elif self._velY < 0:  # cima
-    #                     self._rect.top = obstacle.rect.bottom
 
     def change_facing_direction(self):
         # so apertando para direita

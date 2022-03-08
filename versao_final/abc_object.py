@@ -32,8 +32,3 @@ class ABCObject(ABC):
         if isinstance(new_color, tuple):
             if len(new_color) == 3 and isinstance(new_color[1], int) and isinstance(new_color[0], int) and isinstance(new_color[2], int):
                 self._color = new_color
-
-    # def draw(self, win, offset):
-    #     fake_rect = copy.deepcopy(self._rect)
-    #     fake_rect.topleft -= offset
-    #     pygame.draw.rect(win, self._color, fake_rect)

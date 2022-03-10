@@ -1,5 +1,7 @@
 from tile import Tile
 from key import Key
+
+
 class Tile_map:
     def __init__(self, tilemap, tile_size):
         self.__tile_size = tile_size
@@ -20,7 +22,7 @@ class Tile_map:
     @property
     def event_list(self):
         return self.__event_list
-        
+
     def fill_lists(self):
         for y, row in enumerate(self.__tilemap):
             for x, tile in enumerate(row):
@@ -38,7 +40,3 @@ class Tile_map:
                     key = Key(x*SIZE, y*SIZE, SIZE, int(tile))
                     self.__tile_list.append(key)
                     self.__event_list.append(key)
-
-
-
-

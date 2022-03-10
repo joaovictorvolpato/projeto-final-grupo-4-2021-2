@@ -18,11 +18,11 @@ class Game_state(metaclass=Singleton):
 
         self.__tile_map = Tile_map(self.__level_dao.get(
             "tilemap"), self.__level_dao.get("tilesize"))
-        self.__obstacles = self.__tile_map.obstacle_list
+        self.__obstacles = self.__tile_map.obstacle_list + self.__tile_map.event_list
         self.__player = Player(
-            PLAYERSTART[0], PLAYERSTART[1], PLAYERSIZE, PLAYERSPEED, self.__obstacles)
+            PLAYERSTART[0], PLAYERSTART[1], PLAYERSIZE, PLAYERSPEED)
         self.__enemies = [
-            Enemy(ENEMYSTART[0], ENEMYSTART[1], ENEMYSIZE, ENEMYSPEED, self.__obstacles)]
+            Enemy(ENEMYSTART[0], ENEMYSTART[1], ENEMYSIZE, ENEMYSPEED)]
         self.__objects = [self.__player] + \
             self.__tile_map.tile_list + self.__enemies
         self.__kinetic_objects = [self.__player] + self.__enemies

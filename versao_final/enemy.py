@@ -5,11 +5,10 @@ from player import Player
 
 
 class Enemy(Kinetic_object):
-    def __init__(self, initial_x: int, initial_y: int, size: int, speed: int, obstacles: list):
+    def __init__(self, initial_x: int, initial_y: int, size: int, speed: int):
         super().__init__(initial_x, initial_y, size, (250, 160, 60),  speed)
         # usar depois para mudar sprite
         self._facing_direction = 'right'
-        self._obstacles = obstacles
         self._velX = self.speed*0.5
         self._velY = self.speed*0.25
 

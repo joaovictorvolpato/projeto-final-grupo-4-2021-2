@@ -4,16 +4,26 @@ from abc_kinetic_object import Kinetic_object
 
 
 class Player(Kinetic_object, Command):
-    def __init__(self, initial_x: int, initial_y: int, size: int, speed: int, obstacles: list):
+    def __init__(self, initial_x: int, initial_y: int, size: int, speed: int):
         Kinetic_object.__init__(
             self, initial_x, initial_y, size, (250, 160, 60),  speed)
         Command.__init__(
-            self, {'up': False, 'down': False, 'right': False, 'left': False})
+            self, {'up': False, 'down': False, 'right': False, 'left': False, 'space_bar': False})
         # usar depois para mudar sprite
         self._facing_direction = 'down'
-        self._obstacles = obstacles
+        # interagir com objetos próximos
+        self._is_interacting = False
+        self._interactable_radius = self._size + self._size/3
+
+    @property
+    def interactable_radius(self):
+        return self._interactable_radius
 
     # usar para normalizar os vetores de velocidade, caso contrario, anda mais rápido nas diagonais
+    @property
+    def is_interacting(self):
+        return self._is_interacting
+
     def __normalize(self):
         if self._velX != 0 and self._velY != 0:
             self._velX *= 1/math.sqrt(2)
@@ -24,7 +34,8 @@ class Player(Kinetic_object, Command):
         return(self._velX, self._velY)
 
     def handle_collision(self, axis):
-        print('player colidiu')
+        # fazer alguma coisa legal aqui dps
+        pass
 
     def change_facing_direction(self):
         # so apertando para direita
@@ -41,6 +52,7 @@ class Player(Kinetic_object, Command):
             self._facing_direction = 'down'
 
     def execute_commands(self):
+        self._is_interacting = self._commands['space_bar']
         self.change_facing_direction()
         self._velX = 0
         self._velY = 0

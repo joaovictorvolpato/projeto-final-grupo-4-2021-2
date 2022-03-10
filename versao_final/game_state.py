@@ -12,6 +12,7 @@ class Game_state(metaclass=Singleton):
         self.__kinetic_objects = self.__tile_map.kinetic_list
         self.__command_objects = self.__tile_map.command_list
         self.__event_objects = self.__tile_map.event_list
+        self.__interactable_objects = self.__tile_map.interactable_list
 
     def change_level(self, next_level: int):
         self.__init__(next_level)
@@ -43,3 +44,7 @@ class Game_state(metaclass=Singleton):
     @property
     def enemies(self):
         return self.__enemies
+
+    @property
+    def interactable_objects(self):
+        return self.__interactable_objects

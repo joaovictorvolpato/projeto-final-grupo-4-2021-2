@@ -19,6 +19,7 @@ class Tile_map_constructor:
         self.__enemy_list = []
         self.__command_list = []
         self.__kinetic_list = []
+        self.__interactable_list = []
         self.fill_init()
 
     @property
@@ -48,6 +49,10 @@ class Tile_map_constructor:
     @property
     def event_list(self):
         return self.__event_list
+
+    @property
+    def interactable_list(self):
+        return self.__interactable_list
 
     def fill_init(self):
         for y, row in enumerate(self.__tilemap):
@@ -85,11 +90,14 @@ class Tile_map_constructor:
                     self.__enemy_list.append(enemy)
                     self.__kinetic_list.append(enemy)
                     self.__object_list.append(enemy)
+                    self.__interactable_list.append(enemy)
                 elif tile == 's':
                     SIZE = self.__tile_size
                     ENEMYSPEED = self.__level_dao.get('smart_speed')
-                    enemy = Smart_enemy(x*SIZE, y*SIZE,
+                    smart_enemy = Smart_enemy(x*SIZE, y*SIZE,
                                          SIZE, ENEMYSPEED, self.player)
-                    self.__enemy_list.append(enemy)
-                    self.__kinetic_list.append(enemy)
-                    self.__object_list.append(enemy)
+                    self.__enemy_list.append(smart_enemy)
+                    self.__kinetic_list.append(smart_enemy)
+                    self.__object_list.append(smart_enemy)
+                    self.__interactable_list.append(smart_enemy)
+                    

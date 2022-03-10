@@ -30,7 +30,6 @@ class Player(Kinetic_object, Command):
             self._velY *= 1/math.sqrt(2)
 
     def move_request(self):
-
         return(self._velX, self._velY)
 
     def handle_collision(self, axis):

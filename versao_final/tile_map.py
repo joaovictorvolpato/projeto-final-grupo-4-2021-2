@@ -3,7 +3,7 @@ from tile import Tile
 from key import Key
 from level_dao import Level_dao
 from player import Player
-from enemy import Enemy
+from simple_enemy import Simple_enemy
 
 
 class Tile_map_constructor:
@@ -79,8 +79,8 @@ class Tile_map_constructor:
                 elif tile == 'e':
                     SIZE = self.__tile_size
                     ENEMYSPEED = self.__level_dao.get('enemy_speed')
-                    enemy = Enemy(x*SIZE, y*SIZE,
-                                  SIZE, ENEMYSPEED)
+                    enemy = Simple_enemy(x*SIZE, y*SIZE,
+                                         SIZE, ENEMYSPEED)
                     self.__enemy_list.append(enemy)
                     self.__kinetic_list.append(enemy)
                     self.__object_list.append(enemy)

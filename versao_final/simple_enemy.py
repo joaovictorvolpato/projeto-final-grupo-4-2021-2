@@ -1,12 +1,13 @@
-import pygame
 import math
 from abc_kinetic_object import Kinetic_object
-from player import Player
+from abc_interactable_object import Interactable_object
 
 
-class Enemy(Kinetic_object):
+class Simple_enemy(Kinetic_object, Interactable_object):
     def __init__(self, initial_x: int, initial_y: int, size: int, speed: int):
-        super().__init__(initial_x, initial_y, size, (250, 160, 60),  speed)
+        Kinetic_object.__init__(self, initial_x, initial_y,
+                                size, (250, 0, 0), speed)
+        Interactable_object.__init__(self)
         # usar depois para mudar sprite
         self._facing_direction = 'right'
         self._velX = self.speed*0.5
@@ -26,5 +27,5 @@ class Enemy(Kinetic_object):
         if axis == 'vertical':
             self._velY *= -1
 
-    def event(self):
+    def on_contact(self):
         print('player collision')

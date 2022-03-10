@@ -1,8 +1,4 @@
-from tokenize import Single
 from abc_singleton import Singleton
-from player import Player
-from enemy import Enemy
-from level_dao import Level_dao
 from tile_map import Tile_map_constructor
 
 

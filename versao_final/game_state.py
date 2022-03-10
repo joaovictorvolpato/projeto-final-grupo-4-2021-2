@@ -4,10 +4,10 @@ from tile_map import Tile_map_constructor
 
 class Game_state(metaclass=Singleton):
     def __init__(self, level):
-        self.__tile_map = Tile_map_constructor(1)
+        self.__tile_map = Tile_map_constructor(level)
         self.__obstacles = self.__tile_map.obstacle_list
         self.__player = self.__tile_map.player
-        self.__enemies = self.__tile_map.enemy_list
+        self.__interactables = self.__tile_map.interactable_list
         self.__objects = self.__tile_map.object_list
         self.__kinetic_objects = self.__tile_map.kinetic_list
         self.__command_objects = self.__tile_map.command_list
@@ -41,5 +41,5 @@ class Game_state(metaclass=Singleton):
         return self.__event_objects
 
     @property
-    def enemies(self):
-        return self.__enemies
+    def interactable(self):
+        return self.__interactables

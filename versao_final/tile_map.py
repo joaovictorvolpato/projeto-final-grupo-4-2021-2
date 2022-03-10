@@ -4,6 +4,7 @@ from key import Key
 from level_dao import Level_dao
 from player import Player
 from simple_enemy import Simple_enemy
+from smart_enemy import Smart_enemy
 
 
 class Tile_map_constructor:
@@ -81,6 +82,14 @@ class Tile_map_constructor:
                     ENEMYSPEED = self.__level_dao.get('enemy_speed')
                     enemy = Simple_enemy(x*SIZE, y*SIZE,
                                          SIZE, ENEMYSPEED)
+                    self.__enemy_list.append(enemy)
+                    self.__kinetic_list.append(enemy)
+                    self.__object_list.append(enemy)
+                elif tile == 's':
+                    SIZE = self.__tile_size
+                    ENEMYSPEED = self.__level_dao.get('smart_speed')
+                    enemy = Smart_enemy(x*SIZE, y*SIZE,
+                                         SIZE, ENEMYSPEED, self.player)
                     self.__enemy_list.append(enemy)
                     self.__kinetic_list.append(enemy)
                     self.__object_list.append(enemy)

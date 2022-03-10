@@ -18,9 +18,6 @@ class Enemy(Kinetic_object):
             self._velY *= 1/math.sqrt(2)
 
     def move_request(self):
-        # self._rect.x += self._velX
-        # self._rect.y += self._velY
-        # self.check_collisions()
         return (self._velX, self.velY)
 
     def handle_collision(self, axis):

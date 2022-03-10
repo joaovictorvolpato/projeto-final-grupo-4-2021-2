@@ -16,9 +16,10 @@ class Event_object_handler:
             player.rect.x + player.size/2 - (obj.rect.x + obj.size/2)) <= player.interactable_radius
         OBJ_Y_IN_RADIUS = abs(
             player.rect.y + player.size/2 - (obj.rect.y + obj.size/2)) <= player.interactable_radius
-        print(abs(player.rect.x + player.size/2 - (obj.rect.x + obj.size/2)),
-              abs(player.rect.y + player.size/2 - (obj.rect.y + obj.size/2)))
+
         if OBJ_X_IN_RADIUS and OBJ_Y_IN_RADIUS and player.is_interacting:
             event = obj.trigger_event()
+            # dessa forma, objetos que mudam o game_state não precisam de um game_state
+            # mudar para outra classe dps ?
             if isinstance(event, int):
                 self.__game_state.change_level(event)

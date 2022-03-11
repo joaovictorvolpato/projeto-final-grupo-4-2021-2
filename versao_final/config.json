@@ -1,5 +1,6 @@
 {
     "player-speed": 8,
     "enemy-speed": 6,
+    "smart_enemy-speed": 2,
     "tile-size": 32
 }

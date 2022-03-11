@@ -1,6 +1,8 @@
 from game_state import Game_state
 import pygame
 
+from smart_enemy import Smart_enemy
+
 # dividir em duas classes depois ? SRP
 
 
@@ -10,7 +12,10 @@ class Movement_handler:
 
     def move(self):
         for i in self.__game_state.kinetic_objects:
-            self.__handle_movement(i, i.move_request())
+            if isinstance(i, Smart_enemy):
+                self.__handle_movement(i, i.move_request(self.__game_state.player))
+            else:
+                self.__handle_movement(i, i.move_request())
 
     def __handle_movement(self, game_obj, mov_req):
         X = mov_req[0]

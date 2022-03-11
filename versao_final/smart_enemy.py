@@ -3,24 +3,25 @@ from abc_kinetic_object import Kinetic_object
 from abc_interactable_object import Interactable_object
 
 
-class Simple_enemy(Kinetic_object, Interactable_object):
+class Smart_enemy(Kinetic_object, Interactable_object):
     def __init__(self, initial_x: int, initial_y: int, size: int, speed: int):
         Kinetic_object.__init__(self, initial_x, initial_y,
                                 size, (250, 0, 0), speed)
         Interactable_object.__init__(self)
         # usar depois para mudar sprite
-        self._facing_direction = 'right'
-        self._velX = self.speed*0.5
-        self._velY = self.speed*0.25
-        self.dano = 5
+        self._dano = 5
 
-    def normalize(self):
-        if self._velX != 0 and self._velY != 0:
-            self._velX *= 1/math.sqrt(2)
-            self._velY *= 1/math.sqrt(2)
-
-    def move_request(self):
+    def move_request(self, player):
+        dx, dy = player.rect.x - self.rect.x, player.rect.y - self.rect.y
+        dist = math.hypot(dx, dy)
+        try:
+            dx, dy = dx / dist, dy / dist
+        except ZeroDivisionError:
+            pass
+        self._velX = dx * self.speed
+        self._velY = dy * self.speed
         return (self._velX, self.velY)
+
 
     def handle_collision(self, axis):
         if axis == 'horizontal':
@@ -29,4 +30,4 @@ class Simple_enemy(Kinetic_object, Interactable_object):
             self._velY *= -1
 
     def on_contact(self):
-        return self.dano
+        return self._dano

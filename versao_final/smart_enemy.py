@@ -10,6 +10,7 @@ class Smart_enemy(Kinetic_object, Interactable_object):
         Interactable_object.__init__(self)
         # usar depois para mudar sprite
         self._player = player
+        self._dano = 5
 
     def move_to_player(self):
         dx, dy = self._player.rect.x - self.rect.x, self._player.rect.y - self.rect.y
@@ -33,5 +34,6 @@ class Smart_enemy(Kinetic_object, Interactable_object):
             self._velY *= -1
 
     def on_contact(self):
-        print('player collisio')
+        return self._dano
+
  

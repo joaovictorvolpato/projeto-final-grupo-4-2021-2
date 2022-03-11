@@ -14,6 +14,7 @@ class Player(Kinetic_object, Command):
         # interagir com objetos próximos
         self._is_interacting = False
         self._interactable_radius = self._size + self._size/3
+        self.health = 1000000
 
     @property
     def interactable_radius(self):

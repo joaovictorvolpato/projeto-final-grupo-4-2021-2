@@ -9,7 +9,7 @@ class Simple_enemy(Kinetic_object, Interactable_object):
                                 size, (250, 0, 0), speed)
         Interactable_object.__init__(self)
         # usar depois para mudar sprite
-        self._facing_direction = 'right'
+        self._dano = 1
         self._velX = self.speed*0.5
         self._velY = self.speed*0.25
 
@@ -28,4 +28,4 @@ class Simple_enemy(Kinetic_object, Interactable_object):
             self._velY *= -1
 
     def on_contact(self):
-        print('player collision')
+        return self._dano

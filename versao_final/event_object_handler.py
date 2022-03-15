@@ -2,8 +2,9 @@ from game_state import Game_state
 
 
 class Event_object_handler:
-    def __init__(self):
-        self.__game_state = Game_state(1)
+    def __init__(self, carregador_de_dados):
+        self.__game_state = Game_state()
+        self.__carregador = carregador_de_dados
 
     def handle_interactions(self):
         for i in self.__game_state.event_objects:
@@ -22,4 +23,4 @@ class Event_object_handler:
             # dessa forma, objetos que mudam o game_state não precisam de um game_state
             # mudar para outra classe dps ?
             if isinstance(event, int):
-                self.__game_state.change_level(event)
+                self.__carregador.carregar(event)

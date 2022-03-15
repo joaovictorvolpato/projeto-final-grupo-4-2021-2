@@ -1,4 +1,3 @@
-from multiprocessing import Event
 from game_state import Game_state
 from event_handler import Event_handler
 import pygame
@@ -8,7 +7,7 @@ import sys
 class Command_handler:
     def __init__(self):
         # Já havia sido instanciado pelo renderer
-        self.__game_state = Game_state(1)
+        self.__game_state = Game_state()
         self.__event_handler = Event_handler()
 
     def execute(self):

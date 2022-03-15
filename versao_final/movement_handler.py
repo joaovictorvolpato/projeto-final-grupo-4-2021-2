@@ -6,7 +6,7 @@ import pygame
 
 class Movement_handler:
     def __init__(self):
-        self.__game_state = Game_state(1)
+        self.__game_state = Game_state()
 
     def move(self):
         for i in self.__game_state.kinetic_objects:

@@ -5,7 +5,7 @@ from smart_enemy import Smart_enemy
 
 class Enemy_constructor(Constructor):
     def __init__(self):
-        super().__init__(['e','s'], ['object', 'interactable'])
+        super().__init__(['e', 's'], ['object', 'interactable'])
 
     def instantiate(self, x, y, tag):
         self.__init__()
@@ -22,4 +22,3 @@ class Enemy_constructor(Constructor):
                 x*SIZE, y*SIZE, SIZE, SPEED_SMART)
             self._lists.append('kinetic')
             return smart_enemy
-            

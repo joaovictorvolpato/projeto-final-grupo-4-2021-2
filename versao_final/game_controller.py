@@ -1,5 +1,4 @@
 import pygame
-import sys
 from renderer import Renderer
 from command_handler import Command_handler
 from movement_handler import Movement_handler
@@ -13,6 +12,7 @@ class Game_controller:
         self.__command_handler = Command_handler()
         self.__movement_handler = Movement_handler()
         self.__event_object_handler = Event_object_handler()
+        self.__clk = pygame.time.Clock()
 
     def execute_game_routine(self):
 
@@ -23,3 +23,11 @@ class Game_controller:
         self.__movement_handler.move()
 
         self.__event_object_handler.handle_interactions()
+
+    def game_loop(self):
+        while True:
+
+            self.execute_game_routine()
+
+            pygame.display.flip()
+            self.__clk.tick(60)

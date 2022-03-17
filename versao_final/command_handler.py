@@ -1,15 +1,15 @@
 from multiprocessing import Event
-from game_state import Game_state
-from event_handler import Event_handler
+from game_state import GameState
+from event_handler import EventHandler
 import pygame
 import sys
 
 
-class Command_handler:
+class CommandHandler:
     def __init__(self):
         # Já havia sido instanciado pelo renderer
-        self.__game_state = Game_state(1)
-        self.__event_handler = Event_handler()
+        self.__game_state = GameState(1)
+        self.__event_handler = EventHandler()
 
     def execute(self):
         # checa os comandos que querem ser executados

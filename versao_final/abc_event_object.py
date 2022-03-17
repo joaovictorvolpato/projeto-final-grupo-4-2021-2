@@ -1,4 +1,3 @@
-from this import d
 from abc_object import ABCObject
 from abc import ABC, abstractmethod
 

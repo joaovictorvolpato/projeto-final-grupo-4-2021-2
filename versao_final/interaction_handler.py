@@ -13,6 +13,6 @@ class Interaction_handler:
         if player.rect.colliderect(interactable_obj.rect):
             interactable_obj.on_contact()
 
-    def __give_hit(self, dano):
-        self.__game_state.player.health -= dano
-        print(self.__game_state.player.health)
+    # def __give_hit(self, dano):
+    #     self.__game_state.player.health -= dano
+    #     print(self.__game_state.player.health)

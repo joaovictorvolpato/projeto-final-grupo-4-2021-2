@@ -3,7 +3,7 @@ from tile_map import Tile_map_constructor
 from player import Player
 
 
-class Game_state(metaclass=Singleton):
+class GameState(metaclass=Singleton):
     def __init__(self, level):
         self.__tile_map = Tile_map_constructor(level)
         self.__obstacles = self.__tile_map.obstacle_list

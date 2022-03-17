@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 from abc_object import ABCObject
 
 
-class Kinetic_object(ABCObject, ABC):
+class KineticObject(ABCObject, ABC):
     def __init__(self, initial_x: int, initial_y: int, size: int, color: tuple, speed: int):
         ABCObject.__init__(self, initial_x, initial_y, size, color)
         self._speed = speed

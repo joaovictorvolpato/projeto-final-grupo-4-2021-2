@@ -3,7 +3,7 @@ from simple_enemy import Simple_enemy
 from smart_enemy import Smart_enemy
 
 
-class Enemy_constructor(Constructor):
+class EnemyConstructor(Constructor):
     def __init__(self):
         super().__init__(['e', 's'], ['object', 'interactable'])
 

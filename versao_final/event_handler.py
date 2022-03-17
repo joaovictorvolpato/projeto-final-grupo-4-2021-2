@@ -2,7 +2,7 @@ import pygame
 
 
 # Transforma inputs em comandos para o jogo
-class Event_handler:
+class EventHandler:
     def __init__(self):
         # teclas que fazem coisas no jogo, USAR PARA TIRAR IFS DPS
         self.__event_list = {'quit': pygame.QUIT, 'down': pygame.K_DOWN, 'right': pygame.K_RIGHT,

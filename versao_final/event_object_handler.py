@@ -1,7 +1,7 @@
 from game_state import Game_state
 
 
-class Event_object_handler:
+class EventObjectHandler:
     def __init__(self):
         self.__game_state = Game_state(1)
 

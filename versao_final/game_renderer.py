@@ -35,7 +35,7 @@ class GameRenderer(AbcRenderer):
         CURRENT_HEALTH = self._game_state.player.current_health
         POSITIONX = 10
         POSITIONY = 20
-        HEIGHT = 10
+        HEIGHT = 15
         empty_healthbar = pygame.Rect(
             POSITIONX, POSITIONY, round(MAXHEALTH * 0.6), HEIGHT)
         current_life = pygame.Rect(

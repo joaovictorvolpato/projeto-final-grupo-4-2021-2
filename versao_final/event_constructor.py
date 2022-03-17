@@ -4,7 +4,7 @@ from key import Key
 
 class EventConstructor(Constructor):
     def __init__(self):
-        super().__init__(['1', '2'], ['object', 'event'])
+        super().__init__(['1', '2', '3'], ['object', 'event'])
 
     def instantiate(self, x, y, tag):
         self.__init__()

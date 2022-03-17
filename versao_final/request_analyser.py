@@ -1,3 +1,5 @@
+import time
+
 from game_state import GameState
 
 
@@ -48,6 +50,8 @@ class RequestAnalyser:
         # e tirar os ifs
         if name == 'damage':
             self.__deal_player_dmg(value)
+        elif name == 'slow':
+            self.__slow_player_down(value)
         elif name == 'change-lv':
             self.__game_state.change_level(value)
             self.__update_dict()
@@ -55,3 +59,12 @@ class RequestAnalyser:
 
     def __deal_player_dmg(self, value):
         self.__game_state.player.health -= value
+
+    def __slow_player_down(self,value):
+        runing_time = 0
+        initial_velocity = self.__game_state.player.speed
+        while runing_time < 5:
+            self.__game_state.player.speed = initial_velocity - value 
+            time.sleep(1)
+            runing_time += 1
+        self.__game_state.player.speed = initial_velocity

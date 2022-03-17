@@ -75,4 +75,3 @@ class Player(KineticObject, Command):
         if self._commands['down'] and not self._commands['up']:
             self._velY = self._speed
         self.__normalize()
-        print(self._health)

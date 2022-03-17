@@ -1,8 +1,8 @@
-from abc_event_object import Event_object
+from abc_event_object import EventObject
 from abc_request_object import AbcRequestObject
 
 
-class Key(Event_object, AbcRequestObject):
+class Key(EventObject, AbcRequestObject):
     def __init__(self, initial_x: int, initial_y: int, size: int, next_level: int):
         super().__init__(initial_x, initial_y, size, (255, 255, 0))
         self._next_level = next_level

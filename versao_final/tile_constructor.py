@@ -2,7 +2,7 @@ from abc_constructor import Constructor
 from tile import Tile
 
 
-class Tile_constructor(Constructor):
+class TileConstructor(Constructor):
     def __init__(self):
         super().__init__(['x', 'g'], ['object'])
 

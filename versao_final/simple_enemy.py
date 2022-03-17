@@ -1,16 +1,15 @@
 import math
 
-from pandas import read_parquet
-from abc_kinetic_object import Kinetic_object
-from abc_interactable_object import Interactable_object
+from abc_kinetic_object import KineticObject
+from abc_interactable_object import InteractableObject
 from abc_request_object import AbcRequestObject
 
 
-class Simple_enemy(Kinetic_object, Interactable_object, AbcRequestObject):
+class SimpleEnemy(KineticObject, InteractableObject, AbcRequestObject):
     def __init__(self, initial_x: int, initial_y: int, size: int, speed: int):
-        Kinetic_object.__init__(self, initial_x, initial_y,
+        KineticObject.__init__(self, initial_x, initial_y,
                                 size, (250, 0, 0), speed)
-        Interactable_object.__init__(self)
+        InteractableObject.__init__(self)
         AbcRequestObject.__init__(self, ['player'])
         # usar depois para mudar sprite
         self._facing_direction = 'right'

@@ -9,7 +9,7 @@ import pygame
 from abc_state import AbcState
 
 
-class Game_controller(AbcState):
+class GameController(AbcState):
     def __init__(self, screen_size):
         super().__init__('game')
         self.__renderer = GameRenderer(screen_size)

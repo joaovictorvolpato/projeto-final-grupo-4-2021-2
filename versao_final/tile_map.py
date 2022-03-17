@@ -5,7 +5,7 @@ from enemy_constructor import Enemy_constructor
 from event_constructor import Event_constructor
 
 
-class Tile_map_constructor:
+class TileMapConstructor:
     def __init__(self, level):
         self.__level_dao = Level_dao(level)
         self.__tilemap = self.__level_dao.get('tile-map')

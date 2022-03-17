@@ -2,7 +2,7 @@ from abc_constructor import Constructor
 from key import Key
 
 
-class Event_constructor(Constructor):
+class EventConstructor(Constructor):
     def __init__(self):
         super().__init__(['1', '2'], ['object', 'event'])
 

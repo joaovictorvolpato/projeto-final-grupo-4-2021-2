@@ -1,11 +1,11 @@
 import math
 from abc_command import Command
-from abc_kinetic_object import Kinetic_object
+from abc_kinetic_object import KineticObject
 
 
-class Player(Kinetic_object, Command):
+class Player(KineticObject, Command):
     def __init__(self, initial_x: int, initial_y: int, size: int, speed: int):
-        Kinetic_object.__init__(
+        KineticObject.__init__(
             self, initial_x, initial_y, size, (250, 160, 60),  speed)
         Command.__init__(
             self, {'up': False, 'down': False, 'right': False, 'left': False, 'space_bar': False})
@@ -14,7 +14,7 @@ class Player(Kinetic_object, Command):
         # interagir com objetos próximos
         self._is_interacting = False
         self._interactable_radius = self._size + self._size/3
-        self.health = 11000
+        self._health = 11000
 
     @property
     def interactable_radius(self):
@@ -66,4 +66,4 @@ class Player(Kinetic_object, Command):
         if self._commands['down'] and not self._commands['up']:
             self._velY = self._speed
         self.__normalize()
-        print(self.health)
+        print(self._health)

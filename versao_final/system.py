@@ -13,11 +13,3 @@ class System:
     def initialize(self):
         pygame.display.set_caption(self.__title)
         self.__main_menu.menu_loop()
-
-    # def main_loop(self):
-    #     while True:
-
-    #         self.__main_menu.menu_loop()
-
-    #         pygame.display.flip()
-    #         self.__clk.tick(self.__clk_speed)

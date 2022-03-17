@@ -1,28 +1,21 @@
 from abc import ABC, abstractmethod
 import pygame
-import sys
 
 
 class AbcMenu(ABC):
-    def __init__(self, screen_size: int, buttons: dict):
-        self._win = pygame.display.set_mode((screen_size, screen_size))
+    def __init__(self, buttons: list, background: str, name: str):
         self._buttons = buttons
-        self._clk = pygame.time.Clock()
+        self._bg = pygame.image.load(background)
+        self._name = name
 
-    def _draw_text(self, text, color, x, y):
-        textobj = self._font.render(text, 1, color)
-        textrect = textobj.get_rect()
-        textrect.topleft = (x, y)
-        self._win.blit(textobj, textrect)
+    @property
+    def buttons(self):
+        return self._buttons
 
-    @abstractmethod
-    def execute_menu_routine(self):
-        pass
+    @property
+    def bg(self):
+        return self._bg
 
-    def menu_loop(self):
-        while True:
-
-            self.execute_menu_routine()
-
-            pygame.display.flip()
-            self._clk.tick(60)
+    @property
+    def name(self):
+        return self._name

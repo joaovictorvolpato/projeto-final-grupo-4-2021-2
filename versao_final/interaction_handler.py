@@ -1,9 +1,9 @@
-from game_state import Game_state
+from game_state import GameState
 
 
-class Interaction_handler:
+class InteractionHandler:
     def __init__(self):
-        self.__game_state = Game_state(1)
+        self.__game_state = GameState(1)
 
     def handle_interaction(self):
         for i in self.__game_state.interactables:

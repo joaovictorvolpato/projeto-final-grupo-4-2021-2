@@ -1,11 +1,11 @@
 from abc_singleton import Singleton
-from tile_map import Tile_map_constructor
+from tile_map import TileMapConstructor
 from player import Player
 
 
 class GameState(metaclass=Singleton):
     def __init__(self, level):
-        self.__tile_map = Tile_map_constructor(level)
+        self.__tile_map = TileMapConstructor(level)
         self.__obstacles = self.__tile_map.obstacle_list
         self.__player = self.__tile_map.player
         self.__interactables = self.__tile_map.interactable_list

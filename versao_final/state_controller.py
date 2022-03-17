@@ -1,5 +1,5 @@
 from menu_controller import MenuController
-from game_controller import Game_controller
+from game_controller import GameController
 import pygame
 
 
@@ -10,7 +10,7 @@ class StateController:
         self.__screen_size = 600
         self.__clk = pygame.time.Clock()
         self.__states = [MenuController(self.__screen_size),
-                         Game_controller(self.__screen_size)]
+                         GameController(self.__screen_size)]
         self.__current_state = self.__states[0]
 
     def main_loop(self):

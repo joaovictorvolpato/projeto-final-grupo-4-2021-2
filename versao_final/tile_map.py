@@ -1,13 +1,13 @@
-from level_dao import Level_dao
-from player_constructor import Player_constructor
-from tile_constructor import Tile_constructor
-from enemy_constructor import Enemy_constructor
-from event_constructor import Event_constructor
+from level_dao import LevelDao
+from player_constructor import PlayerConstructor
+from tile_constructor import TileConstructor
+from enemy_constructor import EnemyConstructor
+from event_constructor import EventConstructor
 
 
 class TileMapConstructor:
     def __init__(self, level):
-        self.__level_dao = Level_dao(level)
+        self.__level_dao = LevelDao(level)
         self.__tilemap = self.__level_dao.get('tile-map')
         self.__object_list = []
         self.__obstacle_list = []
@@ -23,8 +23,8 @@ class TileMapConstructor:
                              'command': self.__command_list,
                              'kinetic': self.__kinetic_list,
                              'request': self.__request_list}
-        self.__constructors = [Player_constructor(), Tile_constructor(),
-                               Enemy_constructor(), Event_constructor()]
+        self.__constructors = [PlayerConstructor(), TileConstructor(),
+                               EnemyConstructor(), EventConstructor()]
         self.fill_init()
         # mudar caso dois players depois
         self.__player = self.__command_list[0]

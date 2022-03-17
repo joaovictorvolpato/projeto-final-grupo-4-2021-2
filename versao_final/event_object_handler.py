@@ -5,7 +5,7 @@ class Event_object_handler:
     def __init__(self):
         self.__game_state = Game_state(1)
 
-    def handle_interactions(self):
+    def handle_events(self):
         for i in self.__game_state.event_objects:
             self.__check_radius(self.__game_state.player, i)
 

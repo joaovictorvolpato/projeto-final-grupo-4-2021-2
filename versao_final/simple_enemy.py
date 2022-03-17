@@ -16,9 +16,10 @@ class Simple_enemy(Kinetic_object, Interactable_object, AbcRequestObject):
         self._facing_direction = 'right'
         self._velX = self.speed*0.5
         self._velY = self.speed*0.25
-        self.dano = 5
+        self._dano = 5
 
-        self._player = None
+        self._fake_player = None
+        self._deal_damage = False
 
     def normalize(self):
         if self._velX != 0 and self._velY != 0:
@@ -35,10 +36,12 @@ class Simple_enemy(Kinetic_object, Interactable_object, AbcRequestObject):
             self._velY *= -1
 
     def on_contact(self):
-        self._player.health -= self.dano
+        self._deal_damage = True
 
     def use_request(self, requested: list):
-        self._player = requested[0]
+        self._fake_player = requested[0]
 
     def request_to_gs(self):
-        return {'player': self._player}
+        if self._deal_damage == True:
+            self._deal_damage = False
+            return {'damage': self._dano}

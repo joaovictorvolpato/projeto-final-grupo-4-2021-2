@@ -10,19 +10,19 @@ class Smart_enemy(Kinetic_object, Interactable_object, AbcRequestObject):
                                 size, (250, 0, 0), speed)
         Interactable_object.__init__(self)
         AbcRequestObject.__init__(self, ['player'])
-        self._player = None
+        self._fake_player = None
         # usar depois para mudar sprite
         self._dano = 5
+        self._deal_damage = False
 
     def move_request(self):
-        player = self._player
-        print(player.rect.x, player.rect.y)
+        player = self._fake_player
         dx, dy = player.rect.x - self.rect.x, player.rect.y - self.rect.y
         dist = math.hypot(dx, dy)
         try:
             dx, dy = dx / dist, dy / dist
         except ZeroDivisionError:
-            print('dividiu por zero ;-;')
+            pass
         self._velX = dx * self.speed
         self._velY = dy * self.speed
         return (self._velX, self.velY)
@@ -34,10 +34,13 @@ class Smart_enemy(Kinetic_object, Interactable_object, AbcRequestObject):
             self._velY *= -1
 
     def on_contact(self):
-        self._player.health -= self._dano
+        self._deal_damage = True
 
     def use_request(self, requested: list):
-        self._player = requested[0]
+        # modificacoes nao alteram player verdadeiro
+        self._fake_player = requested[0]
 
     def request_to_gs(self):
-        return {'player': self._player}
+        if self._deal_damage == True:
+            self._deal_damage = False
+            return {'damage': self._dano}

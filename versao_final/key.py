@@ -8,6 +8,7 @@ class Key(Event_object, AbcRequestObject):
         self._next_level = next_level
         self._request = []
         self._change_level = False
+
         # MUDAR DEPOIS PARA OBSERVERS
 
     def trigger_event(self):
@@ -19,4 +20,5 @@ class Key(Event_object, AbcRequestObject):
     def request_to_gs(self):
         if self._change_level == True:
             return {'change-lv': self._next_level}
+            self._change_level = False
         return {}

@@ -29,8 +29,9 @@ class RequestAnalyser:
     def __handle_write(self):
         for obj in self.__game_state.request_objects:
             changes = obj.request_to_gs()
-            for name, list in changes.items():
-                self.__update_gs(name, list)
+            if not changes is None:
+                for name, list in changes.items():
+                    self.__update_gs(name, list)
 
     def __update_dict(self):
         self.__gs_dict = {'obstacles': self.__game_state.obstacles,
@@ -42,11 +43,15 @@ class RequestAnalyser:
                           'event_objects': self.__game_state.event_objects,
                           'request_objects': self.__game_state.request_objects}
 
-    def __update_gs(self, name, list):
+    def __update_gs(self, name, value):
         # idealmente fazer um handler para cada lista, para não precisar criar objetos novos
         # e tirar os ifs
-        if name == 'player':
-            self.__game_state.player = list
+        if name == 'damage':
+            self.__deal_player_dmg(value)
         elif name == 'change-lv':
-            self.__game_state.change_level(list)
+            self.__game_state.change_level(value)
+            self.__update_dict()
             self.__handle_read()
+
+    def __deal_player_dmg(self, value):
+        self.__game_state.player.health -= value

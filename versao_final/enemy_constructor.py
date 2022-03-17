@@ -16,9 +16,11 @@ class Enemy_constructor(Constructor):
             simple_enemy = Simple_enemy(
                 x*SIZE, y*SIZE, SIZE, SPEED)
             self._lists.append('kinetic')
+            self._lists.append('request')
             return simple_enemy
         if tag == 's':
             smart_enemy = Smart_enemy(
                 x*SIZE, y*SIZE, SIZE, SPEED_SMART)
             self._lists.append('kinetic')
+            self._lists.append('request')
             return smart_enemy

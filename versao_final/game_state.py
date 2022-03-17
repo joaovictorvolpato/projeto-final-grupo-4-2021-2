@@ -1,5 +1,6 @@
 from abc_singleton import Singleton
 from tile_map import Tile_map_constructor
+from player import Player
 
 
 class Game_state(metaclass=Singleton):
@@ -12,6 +13,7 @@ class Game_state(metaclass=Singleton):
         self.__kinetic_objects = self.__tile_map.kinetic_list
         self.__command_objects = self.__tile_map.command_list
         self.__event_objects = self.__tile_map.event_list
+        self.__request_objects = self.__tile_map.request_list
 
     def change_level(self, next_level: int):
         self.__init__(next_level)
@@ -41,5 +43,16 @@ class Game_state(metaclass=Singleton):
         return self.__event_objects
 
     @property
-    def interactable(self):
+    def interactables(self):
         return self.__interactables
+
+    @property
+    def request_objects(self):
+        return self.__request_objects
+
+    @player.setter
+    def player(self, new):
+        if isinstance(new, Player):
+            self.__player = new
+            return
+        print('não é um player')

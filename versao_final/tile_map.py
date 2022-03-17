@@ -15,9 +15,14 @@ class Tile_map_constructor:
         self.__interactable_list = []
         self.__command_list = []
         self.__kinetic_list = []
-        self.__lists_dict = {'object': self.__object_list, 'obstacle': self.__obstacle_list,
-                             'event': self.__event_list, 'interactable': self.__interactable_list,
-                             'command': self.__command_list, 'kinetic': self.__kinetic_list}
+        self.__request_list = []
+        self.__lists_dict = {'object': self.__object_list,
+                             'obstacle': self.__obstacle_list,
+                             'event': self.__event_list,
+                             'interactable': self.__interactable_list,
+                             'command': self.__command_list,
+                             'kinetic': self.__kinetic_list,
+                             'request': self.__request_list}
         self.__constructors = [Player_constructor(), Tile_constructor(),
                                Enemy_constructor(), Event_constructor()]
         self.fill_init()
@@ -51,6 +56,10 @@ class Tile_map_constructor:
     @property
     def event_list(self):
         return self.__event_list
+
+    @property
+    def request_list(self):
+        return self.__request_list
 
     def fill_init(self):
         for y, row in enumerate(self.__tilemap):

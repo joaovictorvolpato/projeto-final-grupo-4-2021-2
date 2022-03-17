@@ -3,10 +3,12 @@ from menu_renderer import MenuRenderer
 from main_menu import MainMenu
 from options_menu import OptionsMenu
 import pygame
+from abc_state import AbcState
 
 
-class MenuController:
+class MenuController(AbcState):
     def __init__(self, screen_size: int):
+        super().__init__('menu')
         self._clk = pygame.time.Clock()
         self._screen_size = screen_size
         self._menus = [MainMenu(), OptionsMenu()]
@@ -15,23 +17,23 @@ class MenuController:
         self._menu_renderer = MenuRenderer(
             self._screen_size, self._current_menu)
 
-    def menu_loop(self):
-        while True:
-            self._menu_renderer.render()
+    def state_routine(self):
 
-            self._menu_logic.check_clicks()
+        self._menu_renderer.render()
 
-            if not self._menu_logic.next_menu is None:
-                for menu in self._menus:
-                    if menu.name == self._menu_logic.next_menu:
-                        self._current_menu = menu
-                        self._menu_logic = MenuLogic(menu)
-                        self._menu_renderer = MenuRenderer(
-                            self._screen_size, menu)
+        self._menu_logic.check_clicks()
 
-            pygame.display.flip()
-            self._clk.tick(60)
+        # checar se mudou de menu e mudar para menu apropriado
+        if not self._menu_logic.next_menu is None:
 
+            # casos especficos que nao mudam de menu mas mudam de estado
+            if self._menu_logic.next_menu == 'quit' or self._menu_logic.next_menu == 'game':
+                self._next_state = self._menu_logic.next_menu
 
-controller = MenuController(600)
-controller.menu_loop()
+            # procurar menu com esse nome e botar ele como current
+            for menu in self._menus:
+                if menu.name == self._menu_logic.next_menu:
+                    self._current_menu = menu
+                    self._menu_logic = MenuLogic(menu)
+                    self._menu_renderer = MenuRenderer(
+                        self._screen_size, menu)

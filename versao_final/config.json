@@ -1,5 +1,5 @@
 {
     "player-speed": 8,
-    "enemy-speed": 50,
+    "enemy-speed": 12,
     "tile-size": 32
 }

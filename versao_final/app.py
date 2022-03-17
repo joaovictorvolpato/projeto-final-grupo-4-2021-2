@@ -1,3 +1,4 @@
-from system import System
-system = System(600, 'teste', 60)
-system.initialize()
+from sre_parse import State
+from state_controller import StateController
+state_controller = StateController()
+state_controller.initialize()

@@ -58,7 +58,7 @@ class RequestAnalyser:
             self.__handle_read()
 
     def __deal_player_dmg(self, value):
-        self.__game_state.player.health -= value
+        self.__game_state.player.current_health -= value
 
     def __slow_player_down(self,value):
         runing_time = 0
@@ -68,3 +68,4 @@ class RequestAnalyser:
             time.sleep(1)
             runing_time += 1
         self.__game_state.player.speed = initial_velocity
+        

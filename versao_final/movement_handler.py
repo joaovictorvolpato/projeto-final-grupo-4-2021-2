@@ -1,13 +1,12 @@
-from game_state import Game_state
+from game_state import GameState
 
 
-class Movement_handler:
+class MovementHandler:
     def __init__(self):
-        self.__game_state = Game_state(1)
+        self.__game_state = GameState(1)
 
     def move(self):
         for i in self.__game_state.kinetic_objects:
-
             self.__handle_movement(i, i.move_request())
 
     def __handle_movement(self, game_obj, mov_req):

@@ -1,9 +1,9 @@
-from game_state import Game_state
+from game_state import GameState
 
 
 class RequestAnalyser:
     def __init__(self):
-        self.__game_state = Game_state(1)
+        self.__game_state = GameState(1)
         self.__gs_dict = {'obstacles': self.__game_state.obstacles,
                           'player': self.__game_state.player,
                           'interactables': self.__game_state.interactables,

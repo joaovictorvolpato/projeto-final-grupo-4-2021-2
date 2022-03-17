@@ -1,5 +1,5 @@
 from abc_renderer import AbcRenderer
-from game_state import Game_state
+from game_state import GameState
 import pygame
 import copy
 
@@ -8,7 +8,7 @@ class GameRenderer(AbcRenderer):
     def __init__(self, screen_size):
         super().__init__(screen_size)
         # singleton, vai ser o primeiro a inicializar o game_state, com o nivel inicial
-        self._game_state = Game_state(1)
+        self._game_state = GameState(1)
         self._offset = pygame.Vector2()
 
     def render(self):

@@ -54,4 +54,4 @@ class RequestAnalyser:
             self.__handle_read()
 
     def __deal_player_dmg(self, value):
-        self.__game_state.player.health -= value
+        self.__game_state.player.current_health -= value

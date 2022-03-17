@@ -2,7 +2,7 @@ from abc_constructor import Constructor
 from player import Player
 
 
-class Player_constructor(Constructor):
+class PlayerConstructor(Constructor):
     def __init__(self):
         super().__init__(['p'], [
             'object', 'kinetic', 'command'])

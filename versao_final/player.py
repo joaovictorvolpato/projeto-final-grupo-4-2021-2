@@ -20,6 +20,15 @@ class Player(KineticObject, Command):
     def interactable_radius(self):
         return self._interactable_radius
 
+    @property
+    def health(self):
+        return self._health
+
+    @health.setter
+    def health(self, new):
+        if isinstance(new, int):
+            self._health = new
+
     # usar para normalizar os vetores de velocidade, caso contrario, anda mais rápido nas diagonais
     @property
     def is_interacting(self):

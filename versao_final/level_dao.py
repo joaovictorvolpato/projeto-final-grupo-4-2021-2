@@ -1,7 +1,7 @@
 from dao import DAO
 
 
-class Level_dao(DAO):
+class LevelDao(DAO):
     def __init__(self, level: int):
         super().__init__('levels.json')
         self._level = level

@@ -1,7 +1,7 @@
 from dao import DAO
 
 
-class Config_dao(DAO):
+class ConfigDao(DAO):
     def __init__(self):
         super().__init__('config.json')
 

@@ -8,6 +8,6 @@ class MenuRenderer(AbcRenderer):
         self._menu = menu
 
     def render(self):
-        self._win.blit(self._bg, (0, 0))
+        self._win.blit(self._menu.bg, (0, 0))
         for button in self._menu.buttons:
-            self._win.blit(button.img, button.x, button.y)
+            self._win.blit(button.img, (button.rect.x, button.rect.y))

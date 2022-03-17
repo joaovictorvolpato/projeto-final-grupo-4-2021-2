@@ -1,4 +1,3 @@
-from os import PRIO_PGRP
 import pygame
 import sys
 
@@ -7,7 +6,7 @@ class MenuLogic:
     def __init__(self, menu):
         self._menu = menu
         self._clicked = False
-        self._next_state = None
+        self._next_menu = None
 
     def check_clicks(self):
 
@@ -28,9 +27,9 @@ class MenuLogic:
             mx, my = pygame.mouse.get_pos()
 
             for button in self._menu.buttons:
-                if button.collidepoint((mx, my)) and self._clicked:
-                    self._next_state = button.destination
+                if button.rect.collidepoint((mx, my)) and self._clicked:
+                    self._next_menu = button.destination
 
     @property
-    def next_state(self):
-        return self._next_state
+    def next_menu(self):
+        return self._next_menu

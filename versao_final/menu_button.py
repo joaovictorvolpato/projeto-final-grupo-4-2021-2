@@ -2,10 +2,13 @@ import pygame
 
 
 class MenuButton:
-    def __init__(self, img: str, destination: str, x: int, y: int):
+    def __init__(
+            self,
+            img: str,
+            destination: str,
+            x: int,
+            y: int):
         self._img = pygame.image.load(img)
-        DEFAULT_SIZE = (100, 50)
-        self._img = pygame.transform.scale(self._img, DEFAULT_SIZE)
         self._destination = destination
         self._rect = self._img.get_rect()
         self._rect.topleft = (x, y)

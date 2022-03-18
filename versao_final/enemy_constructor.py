@@ -5,11 +5,11 @@ from freez_enemy import FreezEnemy
 
 
 class EnemyConstructor(Constructor):
-    def __init__(self):
-        super().__init__(['e', 's', 'fe'], ['object', 'interactable'])
+    def __init__(self, level):
+        super().__init__(['e', 's', 'fe'], ['object', 'interactable'], level)
 
     def instantiate(self, x, y, tag):
-        self.__init__()
+        self.__init__(self._level)
         SIZE = self._config.get('tile-size')
         SPEED = self._config.get('enemy-speed')
         SPEED_SMART = self._config.get('smart-enemy-speed')

@@ -5,7 +5,7 @@ from abc_request_object import AbcRequestObject
 
 class FinalKey(EventObject, AbcRequestObject):
     def __init__(self, initial_x: int, initial_y: int, size: int):
-        super().__init__(initial_x, initial_y, size, (255, 255, 0))
+        super().__init__(initial_x, initial_y, size, 'sprites/placeholder.png')
         self._request = []
         self._change_level = False
         self._won_game = False

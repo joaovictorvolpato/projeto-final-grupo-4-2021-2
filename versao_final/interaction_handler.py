@@ -35,6 +35,9 @@ class InteractionHandler:
     def __deal_player_dmg(self, value):
         if self.__game_state.player.hit_stun <= 0:
             self.__game_state.player.current_health -= value
+            if self.__game_state.player.current_health == 0:
+                self.__game_state.next_state = ['menu','lost']
+
 
     def __slow_player_down(self, value):
         self.__game_state.player.freezed = value

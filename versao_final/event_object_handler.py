@@ -4,7 +4,10 @@ from game_state import GameState
 class EventObjectHandler:
     def __init__(self):
         self.__game_state = GameState(1)
-        self.__next_state = None
+
+    @property
+    def next_state(self):
+        return self.__next_state
 
     def handle_events(self):
         for i in self.__game_state.event_objects:
@@ -26,3 +29,5 @@ class EventObjectHandler:
         for name, value in actions.items():
             if name == 'change-lv':
                 self.__game_state.change_level(value)
+            if name == 'change_state':
+                self.__game_state.next_state = ['menu', value]

@@ -14,6 +14,7 @@ class GameState(metaclass=Singleton):
         self.__command_objects = self.__tile_map.command_list
         self.__event_objects = self.__tile_map.event_list
         self.__request_objects = self.__tile_map.request_list
+        self.__next_state = None
 
     def change_level(self, next_level: int):
         self.__init__(next_level)
@@ -21,6 +22,10 @@ class GameState(metaclass=Singleton):
     @property
     def player(self):
         return self.__player
+
+    @property
+    def next_state(self):
+        return self.__next_state
 
     @property
     def objects(self):
@@ -56,3 +61,7 @@ class GameState(metaclass=Singleton):
             self.__player = new
             return
         print('não é um player')
+
+    @next_state.setter
+    def next_state(self, new_state):
+        self.__next_state = new_state

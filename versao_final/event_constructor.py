@@ -18,5 +18,4 @@ class EventConstructor(Constructor):
         if tag == 'fk':
             final_key = FinalKey(x*SIZE, y*SIZE, SIZE)
             self._lists.append('obstacle')
-            self._lists.append('request')
             return final_key

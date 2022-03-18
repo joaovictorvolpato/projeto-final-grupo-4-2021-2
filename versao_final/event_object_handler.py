@@ -18,4 +18,10 @@ class EventObjectHandler:
             player.rect.y + player.size/2 - (obj.rect.y + obj.size/2)) <= player.interactable_radius
 
         if OBJ_X_IN_RADIUS and OBJ_Y_IN_RADIUS and player.is_interacting:
-            obj.trigger_event()
+            actions = obj.trigger_event()
+            self.__exec_action(actions)
+
+    def __exec_action(self, actions: dict):
+        for name, value in actions.items():
+            if name == 'change-lv':
+                self.__game_state.change_level(value)

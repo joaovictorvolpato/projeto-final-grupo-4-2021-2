@@ -12,5 +12,4 @@ class EventConstructor(Constructor):
         if tag.isdecimal():
             key = Key(x*SIZE, y*SIZE, SIZE, int(tag))
             self._lists.append('obstacle')
-            self._lists.append('request')
             return key

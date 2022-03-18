@@ -8,9 +8,9 @@ class AbcRequestObject(ABC):
 
     # informa quais informações do game state precisam ser mudadas
 
-    @abstractmethod
-    def request_to_gs(self):
-        pass
+    # @abstractmethod
+    # def request_to_gs(self):
+    #     pass
 
     @abstractmethod
     def use_request(self, requested: list):

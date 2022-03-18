@@ -2,18 +2,16 @@ import math
 import time
 from abc_object import ABCObject
 from abc_interactable_object import InteractableObject
-from abc_request_object import AbcRequestObject
 
 
-class FreezEnemy(ABCObject, InteractableObject, AbcRequestObject):
+class FreezEnemy(ABCObject, InteractableObject):
     def __init__(self, initial_x: int, initial_y: int, size: int, ):
         ABCObject.__init__(self, initial_x, initial_y,
                            size, 'sprites/ice.png')
         InteractableObject.__init__(self)
-        AbcRequestObject.__init__(self, ['player'])
-        self._player = None
+        # self._player = None
         # usar depois para mudar sprite
-        self._slow_player = False
+        # self._slow_player = False
         self._speed_loss = 100
 
     '''def move_request(self):
@@ -36,12 +34,11 @@ class FreezEnemy(ABCObject, InteractableObject, AbcRequestObject):
             self._velY *= -1'''
 
     def on_contact(self):
-        self._slow_player = True
+        return {'slow': self._speed_loss}
 
-    def use_request(self, requested: list):
-        self._player = requested[0]
+    # def use_request(self, requested: list):
+    #     self._player = requested[0]
 
-    def request_to_gs(self):
-        if self._slow_player == True:
-            self._slow_player = False
-            return {'slow': self._speed_loss}
+    # # def request_to_gs(self):
+    # #     if self._slow_player == True:
+    # #         self._slow_player = False

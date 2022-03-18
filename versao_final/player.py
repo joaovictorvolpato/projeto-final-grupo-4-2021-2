@@ -16,8 +16,8 @@ class Player(KineticObject, Command):
         self._interactable_radius = self._size + self._size/3
         self._max_health = 500
         self._current_health = self._max_health
-
-        # tempo ate acabar freeze
+        # caso esteja em hitstun > 0, não pode tomar dano
+        self._hit_stun = 0
 
     @property
     def interactable_radius(self):
@@ -30,6 +30,15 @@ class Player(KineticObject, Command):
     @property
     def current_health(self):
         return self._current_health
+
+    @property
+    def hit_stun(self):
+        return self._hit_stun
+
+    @hit_stun.setter
+    def hit_stun(self, new):
+        if isinstance(new, int):
+            self._hit_stun = new
 
     @current_health.setter
     def current_health(self, new):
@@ -69,6 +78,10 @@ class Player(KineticObject, Command):
             self._facing_direction = 'down'
 
     def execute_commands(self):
+        # temporario
+        if self._hit_stun > 0:
+            self._hit_stun -= 1
+
         self._is_interacting = self._commands['space_bar']
         self.change_facing_direction()
         self._velX = 0

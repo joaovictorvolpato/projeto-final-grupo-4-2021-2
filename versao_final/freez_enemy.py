@@ -14,7 +14,7 @@ class FreezEnemy(ABCObject, InteractableObject, AbcRequestObject):
         self._player = None
         # usar depois para mudar sprite
         self._slow_player = False
-        self._speed_loss = 300
+        self._speed_loss = 100
 
     '''def move_request(self):
         player = self._player

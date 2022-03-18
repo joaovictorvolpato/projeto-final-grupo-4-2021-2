@@ -16,6 +16,8 @@ class Player(KineticObject, Command):
         self._interactable_radius = self._size + self._size/3
         self._max_health = 500
         self._current_health = self._max_health
+        self._has_lost = False
+        self._has_won = False
 
     @property
     def interactable_radius(self):
@@ -28,6 +30,22 @@ class Player(KineticObject, Command):
     @property
     def current_health(self):
         return self._current_health
+
+    @property
+    def has_won(self):
+        return self._has_won
+
+    @property
+    def has_lost(self):
+        return self._has_lost
+
+    @has_won.setter
+    def has_won(self, value):
+        self._has_won = value
+
+    @has_lost.setter
+    def has_lost(self, value):
+        self._has_lost = value
 
     @current_health.setter
     def current_health(self, new):

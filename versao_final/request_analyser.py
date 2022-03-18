@@ -50,8 +50,11 @@ class RequestAnalyser:
         # e tirar os ifs
         if name == 'damage':
             self.__deal_player_dmg(value)
+            self.__lost_game()
         elif name == 'slow':
             self.__slow_player_down(value)
+        elif name == 'won-game':
+            self.__won_game()
         elif name == 'change-lv':
             self.__game_state.change_level(value)
             self.__update_dict()
@@ -59,6 +62,14 @@ class RequestAnalyser:
 
     def __deal_player_dmg(self, value):
         self.__game_state.player.current_health -= value
+        
+    def __lost_game(self):
+        if self.__game_state.player.current_health == 0:
+            self.__game_state.player.has_lost = True
+
+    def __won_game(self):
+        self.__game_state.player.has_won = True
+
 
     def __slow_player_down(self,value):
         runing_time = 0

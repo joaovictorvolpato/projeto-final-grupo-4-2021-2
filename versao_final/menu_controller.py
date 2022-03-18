@@ -32,6 +32,9 @@ class MenuController(AbcState):
             if isinstance(self._menu_logic.next_menu, int):
                 self._next_state = ['game', self._menu_logic.next_menu, ]
 
+            if self._menu_logic.next_menu == 'quit':
+                self._next_state = ['quit', 'sair']
+
             # procurar menu com esse nome e botar ele como current
             self.__change_menu(self._menu_logic._next_menu)
 

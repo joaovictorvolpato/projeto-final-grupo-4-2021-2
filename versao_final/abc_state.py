@@ -17,3 +17,7 @@ class AbcState(ABC):
     @abstractmethod
     def state_routine(self):
         pass
+
+    @abstractmethod
+    def change_semi_state(self):
+        pass

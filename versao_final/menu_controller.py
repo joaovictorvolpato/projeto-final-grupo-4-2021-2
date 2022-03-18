@@ -2,17 +2,20 @@ from menu_logic import MenuLogic
 from menu_renderer import MenuRenderer
 from main_menu import MainMenu
 from options_menu import OptionsMenu
+from win_menu import WinMenu
 import pygame
 from abc_state import AbcState
 
 
 class MenuController(AbcState):
-    def __init__(self, screen_size: int):
+    def __init__(self, screen_size: int, next_menu: str):
         super().__init__('menu')
         self._clk = pygame.time.Clock()
         self._screen_size = screen_size
-        self._menus = [MainMenu(), OptionsMenu()]
-        self._current_menu = self._menus[0]
+        self._menus = [MainMenu(), OptionsMenu(),WinMenu()]
+        for menu in self._menus:
+            if menu.name == next_menu:
+                self._current_menu  = menu
         self._menu_logic = MenuLogic(self._current_menu)
         self._menu_renderer = MenuRenderer(
             self._screen_size, self._current_menu)
@@ -28,12 +31,15 @@ class MenuController(AbcState):
 
             # casos especficos que nao mudam de menu mas mudam de estado
             if self._menu_logic.next_menu == 'quit' or self._menu_logic.next_menu == 'game':
-                self._next_state = self._menu_logic.next_menu
+                self._next_state = [self._menu_logic.next_menu, 'nada']
 
             # procurar menu com esse nome e botar ele como current
-            for menu in self._menus:
-                if menu.name == self._menu_logic.next_menu:
-                    self._current_menu = menu
-                    self._menu_logic = MenuLogic(menu)
-                    self._menu_renderer = MenuRenderer(
-                        self._screen_size, menu)
+            
+
+    def change_semi_state(self, next_menu_str):
+        for next_menu_obj in self._menus:
+            if next_menu_str == next_menu_obj.name:
+                self._current_menu = next_menu_obj
+                self._menu_logic = MenuLogic(next_menu_obj)
+                self._menu_renderer = MenuRenderer(
+                    self._screen_size, next_menu_obj)

@@ -6,7 +6,7 @@ from freez_enemy import FreezEnemy
 
 class EnemyConstructor(Constructor):
     def __init__(self, level):
-        super().__init__(['e', 's', 'fe'], ['object', 'interactable'], level)
+        super().__init__(['e', 's', 'f'], ['object', 'interactable'], level)
 
     def instantiate(self, x, y, tag):
         self.__init__(self._level)
@@ -20,11 +20,11 @@ class EnemyConstructor(Constructor):
             return simple_enemy
         if tag == 's':
             smart_enemy = SmartEnemy(
-                x*SIZE, y*SIZE, SIZE, SPEED_SMART)
+                x*SIZE, y*SIZE, SIZE, SPEED_SMART, f'sprites/lv{self._level}_tiles/s.png')
             self._lists.append('kinetic')
             self._lists.append('request')
             return smart_enemy
-        if tag == 'fe':
+        if tag == 'f':
             freez_enemy = FreezEnemy(
-                x*SIZE, y*SIZE, SIZE)
+                x*SIZE, y*SIZE, SIZE, f'sprites/lv{self._level}_tiles/f.png')
             return freez_enemy

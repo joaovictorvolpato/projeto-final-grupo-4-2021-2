@@ -5,9 +5,9 @@ from abc_request_object import AbcRequestObject
 
 
 class SmartEnemy(KineticObject, InteractableObject, AbcRequestObject):
-    def __init__(self, initial_x: int, initial_y: int, size: int, speed: int):
+    def __init__(self, initial_x: int, initial_y: int, size: int, speed: int, sprite: str):
         KineticObject.__init__(self, initial_x, initial_y,
-                               size, 'sprites/placeholder.png', speed)
+                               size, sprite, speed)
         InteractableObject.__init__(self)
         AbcRequestObject.__init__(self, ['player'])
         # self._fake_player = None

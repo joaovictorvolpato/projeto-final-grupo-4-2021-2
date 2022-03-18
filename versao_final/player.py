@@ -14,7 +14,7 @@ class Player(KineticObject, Command):
         # interagir com objetos próximos
         self._is_interacting = False
         self._interactable_radius = self._size + self._size/3
-        self._max_health = 500
+        self._max_health = 1000
         self._current_health = self._max_health
         # caso esteja em hitstun > 0, não pode tomar dano
         self._hit_stun = 0

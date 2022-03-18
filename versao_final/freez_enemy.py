@@ -5,9 +5,9 @@ from abc_interactable_object import InteractableObject
 
 
 class FreezEnemy(ABCObject, InteractableObject):
-    def __init__(self, initial_x: int, initial_y: int, size: int, ):
+    def __init__(self, initial_x: int, initial_y: int, size: int, sprite: str):
         ABCObject.__init__(self, initial_x, initial_y,
-                           size, 'sprites/ice.png')
+                           size, sprite)
         InteractableObject.__init__(self)
         # self._player = None
         # usar depois para mudar sprite

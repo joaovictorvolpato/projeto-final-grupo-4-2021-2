@@ -12,7 +12,8 @@ class EventConstructor(Constructor):
         self.__init__(self._level)
         SIZE = self._config.get('tile-size')
         if tag.isdecimal():
-            key = Key(x*SIZE, y*SIZE, SIZE, int(tag))
+            key = Key(x*SIZE, y*SIZE, SIZE, int(tag),
+                      f'sprites/lv{self._level}_tiles/k.png')
             self._lists.append('obstacle')
             return key
         if tag == 'fk':

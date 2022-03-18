@@ -3,6 +3,7 @@ from menu_renderer import MenuRenderer
 from main_menu import MainMenu
 from win_menu import WinMenu
 from level_selection_menu import LevelSelectionMenu
+from lost_menu import LostMenu
 import pygame
 from abc_state import AbcState
 
@@ -12,7 +13,7 @@ class MenuController(AbcState):
         super().__init__('menu')
         self._clk = pygame.time.Clock()
         self._screen_size = screen_size
-        self._menus = [MainMenu(), LevelSelectionMenu(), WinMenu()]
+        self._menus = [MainMenu(), LevelSelectionMenu(), WinMenu(), LostMenu()]
         self._current_menu = self._menus[0]
         self._menu_logic = MenuLogic(self._current_menu)
         self._menu_renderer = MenuRenderer(

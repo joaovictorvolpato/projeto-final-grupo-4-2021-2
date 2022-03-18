@@ -13,6 +13,10 @@ class RequestAnalyser:
                           'event_objects': self.__game_state.event_objects,
                           'request_objects': self.__game_state.request_objects}
 
+    @property
+    def game_state(self):
+        return self.__game_state
+
     def handle_requests(self):
         self.__update_dict()
         self.__handle_read()

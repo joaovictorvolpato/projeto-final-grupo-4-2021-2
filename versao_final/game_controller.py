@@ -40,4 +40,4 @@ class GameController(AbcState):
         self._next_state = self.__victory_lost_handeler.check_situation()
 
     def change_semi_state(self, next_level):
-        pass
+        self.__request_analyser.game_state.change_level(next_level)

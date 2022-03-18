@@ -15,11 +15,11 @@ class LevelSelectionMenu(AbcMenu):
             "return_button_level_selection.png"
         )
         buttons = [
-            MenuButton(return_image_path, "main", 75, 94),
-            LevelButton(1, 94, 188),
-            LevelButton(2, 382, 285),
-            LevelButton(3, 94, 322),
-        ]
+                MenuButton(return_image_path, "main", 126, 157),
+                LevelButton(1, 160, 325),
+                LevelButton(2, 643, 480),
+                LevelButton(3, 162, 546),
+                ]
         background_path = \
             join("images", "background_level_selection_menu.png")
         name = "level_selection"

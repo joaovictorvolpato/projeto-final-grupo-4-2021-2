@@ -22,8 +22,8 @@ class GameController(AbcState):
         self.__interaction_handeler = InteractionHandler()
         self.__request_analyser = RequestAnalyser()
         self.__victory_lost_handeler = VictoryLostHandler()
-        self._won_game = False
-        self._lost_game = False
+        # self._won_game = False
+        # self._lost_game = False
 
     def state_routine(self):
 

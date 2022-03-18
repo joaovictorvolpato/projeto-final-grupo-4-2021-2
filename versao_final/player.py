@@ -18,8 +18,8 @@ class Player(KineticObject, Command):
         self._current_health = self._max_health
         # caso esteja em hitstun > 0, não pode tomar dano
         self._hit_stun = 0
-        self._has_lost = False
-        self._has_won = False
+        # self._has_lost = False
+        # self._has_won = False
 
         # tempo ate acabar freeze
 
@@ -44,21 +44,21 @@ class Player(KineticObject, Command):
         if isinstance(new, int):
             self._hit_stun = new
 
-    @property
-    def has_won(self):
-        return self._has_won
+    # @property
+    # def has_won(self):
+    #     return self._has_won
 
-    @property
-    def has_lost(self):
-        return self._has_lost
+    # @property
+    # def has_lost(self):
+    #     return self._has_lost
 
-    @has_won.setter
-    def has_won(self, value):
-        self._has_won = value
+    # @has_won.setter
+    # def has_won(self, value):
+    #     self._has_won = value
 
-    @has_lost.setter
-    def has_lost(self, value):
-        self._has_lost = value
+    # @has_lost.setter
+    # def has_lost(self, value):
+    #     self._has_lost = value
 
     @current_health.setter
     def current_health(self, new):

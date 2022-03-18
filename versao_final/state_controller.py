@@ -7,7 +7,7 @@ class StateController:
 
     def __init__(self):
         pygame.init()
-        self.__screen_size = 600
+        self.__screen_size = 1000
         self.__clk = pygame.time.Clock()
         self.__states = [MenuController(self.__screen_size),
                          GameController(self.__screen_size)]

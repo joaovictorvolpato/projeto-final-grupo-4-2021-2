@@ -6,7 +6,7 @@ from abc_kinetic_object import KineticObject
 class Player(KineticObject, Command):
     def __init__(self, initial_x: int, initial_y: int, size: int, speed: int):
         KineticObject.__init__(
-            self, initial_x, initial_y, size, (250, 160, 60),  speed)
+            self, initial_x, initial_y, size, 'sprites/placeholder.png',  speed)
         Command.__init__(
             self, {'up': False, 'down': False, 'right': False, 'left': False, 'space_bar': False})
         # usar depois para mudar sprite

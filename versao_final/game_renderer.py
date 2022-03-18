@@ -28,7 +28,7 @@ class GameRenderer(AbcRenderer):
     def _draw(self, game_obj):
         fake_rect = copy.deepcopy(game_obj.rect)
         fake_rect.topleft -= self._offset
-        pygame.draw.rect(self._win, game_obj.color, fake_rect)
+        self._win.blit(game_obj.sprite, (fake_rect.x, fake_rect.y))
 
     def __draw_health_bar(self):
         MAXHEALTH = self._game_state.player.max_health

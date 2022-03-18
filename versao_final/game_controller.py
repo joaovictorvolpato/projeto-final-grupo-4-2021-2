@@ -9,6 +9,7 @@ from request_analyser import RequestAnalyser
 import pygame
 from abc_state import AbcState
 from vitctory_lost_handler import VictoryLostHandler
+from game_state import GameState
 
 
 class GameController(AbcState):
@@ -21,7 +22,7 @@ class GameController(AbcState):
         self.__interaction_handeler = InteractionHandler()
         self.__request_analyser = RequestAnalyser()
         self.__victory_lost_handeler = VictoryLostHandler()
-        self._next_state = list
+        self._next_state = None
 
     def state_routine(self):
 
@@ -41,9 +42,3 @@ class GameController(AbcState):
 
     def change_semi_state(self, next_level):
         pass
-        
-
-
-
-
-

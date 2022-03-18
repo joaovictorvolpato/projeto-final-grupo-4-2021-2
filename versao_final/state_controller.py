@@ -17,11 +17,13 @@ class StateController:
         while True:
             self.__current_state.state_routine()
 
-            if self.__current_state.next_state != None:
+            if not self.__current_state.next_state is None:
                 for state in self.__states:
                     if state.name == self.__current_state.next_state[0]:
+                        next_semi_state = self.__current_state.next_state[1]
                         self.__current_state = state
-                        self.__current_state.change_semi_state(self.__current_state.next_state[1])
+                        self.__current_state.change_semi_state(next_semi_state)
+                        break
 
             pygame.display.flip()
             self.__clk.tick(60)

@@ -9,7 +9,6 @@ from request_analyser import RequestAnalyser
 import pygame
 from abc_state import AbcState
 from vitctory_lost_handler import VictoryLostHandler
-from game_state import GameState
 
 
 class GameController(AbcState):

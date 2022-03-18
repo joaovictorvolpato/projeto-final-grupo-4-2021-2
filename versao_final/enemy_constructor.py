@@ -1,11 +1,12 @@
 from abc_constructor import Constructor
 from simple_enemy import SimpleEnemy
 from smart_enemy import SmartEnemy
+from freez_enemy import FreezEnemy
 
 
 class EnemyConstructor(Constructor):
     def __init__(self):
-        super().__init__(['e', 's'], ['object', 'interactable'])
+        super().__init__(['e', 's', 'fe'], ['object', 'interactable'])
 
     def instantiate(self, x, y, tag):
         self.__init__()
@@ -24,3 +25,9 @@ class EnemyConstructor(Constructor):
             self._lists.append('kinetic')
             self._lists.append('request')
             return smart_enemy
+        if tag == 'fe':
+            freez_enemy = FreezEnemy(
+                x*SIZE, y*SIZE, SIZE)
+            self._lists.append('request')
+            return freez_enemy
+        

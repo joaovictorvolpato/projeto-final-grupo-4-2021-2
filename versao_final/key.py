@@ -4,12 +4,10 @@ from abc_request_object import AbcRequestObject
 
 class Key(EventObject, AbcRequestObject):
     def __init__(self, initial_x: int, initial_y: int, size: int, next_level: int):
-        super().__init__(initial_x, initial_y, size, (255, 255, 0))
+        super().__init__(initial_x, initial_y, size, 'sprites/placeholder.png')
         self._next_level = next_level
         self._request = []
         self._change_level = False
-
-        # MUDAR DEPOIS PARA OBSERVERS
 
     def trigger_event(self):
         self._change_level = True

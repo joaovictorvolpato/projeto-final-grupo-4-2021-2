@@ -12,6 +12,10 @@ class MovementHandler:
     def __handle_movement(self, game_obj, mov_req):
         X = mov_req[0]
         Y = mov_req[1]
+        if game_obj.freezed > 0:
+            X *= 0.3
+            Y *= 0.3
+            game_obj.freezed -= 1
         game_obj.rect.x += X
         self.__handle_collision(game_obj, 'horizontal', X, Y)
         game_obj.rect.y += Y

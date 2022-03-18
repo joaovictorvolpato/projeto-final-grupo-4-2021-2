@@ -23,8 +23,8 @@ class TileMapConstructor:
                              'command': self.__command_list,
                              'kinetic': self.__kinetic_list,
                              'request': self.__request_list}
-        self.__constructors = [PlayerConstructor(), TileConstructor(),
-                               EnemyConstructor(), EventConstructor()]
+        self.__constructors = [PlayerConstructor(level), TileConstructor(level),
+                               EnemyConstructor(level), EventConstructor(level)]
         self.fill_init()
         # mudar caso dois players depois
         self.__player = self.__command_list[0]

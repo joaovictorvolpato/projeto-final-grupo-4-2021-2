@@ -12,9 +12,9 @@ class MenuController(AbcState):
         self._clk = pygame.time.Clock()
         self._screen_size = screen_size
         self._menus = [
-                MainMenu(),
-                LevelSelectionMenu(),
-                ]
+            MainMenu(),
+            LevelSelectionMenu(),
+        ]
         self._current_menu = self._menus[0]
         self._menu_logic = MenuLogic(self._current_menu)
         self._menu_renderer = MenuRenderer(
@@ -30,8 +30,8 @@ class MenuController(AbcState):
         if not self._menu_logic.next_menu is None:
 
             # casos especficos que nao mudam de menu mas mudam de estado
-            if self._menu_logic.next_menu == 'quit' or self._menu_logic.next_menu == 'game':
-                self._next_state = self._menu_logic.next_menu
+            if isinstance(self._menu_logic.next_menu, int):
+                self._next_state = ['game', self._menu_logic.next_menu]
 
             # procurar menu com esse nome e botar ele como current
             for menu in self._menus:

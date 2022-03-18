@@ -11,10 +11,10 @@ class StateController:
         self.__screen_size = 1000
         self.__clk = pygame.time.Clock()
         self.__states = [
-                MenuController(self.__screen_size),
-                GameController(self.__screen_size),
-                QuitController(),
-                ]
+            MenuController(self.__screen_size),
+            GameController(self.__screen_size),
+            QuitController(),
+        ]
         self.__current_state = self.__states[0]
 
     def main_loop(self):
@@ -25,6 +25,7 @@ class StateController:
                 for state in self.__states:
                     if state.name == self.__current_state.next_state:
                         self.__current_state = state
+                        break
 
             pygame.display.flip()
             self.__clk.tick(60)

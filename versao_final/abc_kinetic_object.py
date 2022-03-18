@@ -9,10 +9,20 @@ class KineticObject(ABCObject, ABC):
         self._velX = 0
         self._velY = 0
         self._has_collided = False
+        self._freezed = 0
 
     @property
     def speed(self):
         return self._speed
+
+    @property
+    def freezed(self):
+        return self._freezed
+
+    @freezed.setter
+    def freezed(self, new):
+        if isinstance(new, int):
+            self._freezed = new
 
     @property
     def velX(self):

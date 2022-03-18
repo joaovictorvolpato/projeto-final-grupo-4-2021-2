@@ -17,6 +17,8 @@ class Player(KineticObject, Command):
         self._max_health = 500
         self._current_health = self._max_health
 
+        # tempo ate acabar freeze
+
     @property
     def interactable_radius(self):
         return self._interactable_radius

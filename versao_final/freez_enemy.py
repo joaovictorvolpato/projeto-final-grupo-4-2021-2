@@ -8,13 +8,13 @@ from abc_request_object import AbcRequestObject
 class FreezEnemy(ABCObject, InteractableObject, AbcRequestObject):
     def __init__(self, initial_x: int, initial_y: int, size: int, ):
         ABCObject.__init__(self, initial_x, initial_y,
-                                size, (0, 0, 255))
+                           size, 'sprites/ice.png')
         InteractableObject.__init__(self)
         AbcRequestObject.__init__(self, ['player'])
         self._player = None
         # usar depois para mudar sprite
         self._slow_player = False
-        self._speed_loss = 12
+        self._speed_loss = 300
 
     '''def move_request(self):
         player = self._player

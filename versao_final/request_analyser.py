@@ -60,12 +60,5 @@ class RequestAnalyser:
     def __deal_player_dmg(self, value):
         self.__game_state.player.current_health -= value
 
-    def __slow_player_down(self,value):
-        runing_time = 0
-        initial_velocity = self.__game_state.player.speed
-        while runing_time < 5:
-            self.__game_state.player.speed = initial_velocity - value 
-            time.sleep(1)
-            runing_time += 1
-        self.__game_state.player.speed = initial_velocity
-        
+    def __slow_player_down(self, value):
+        self.__game_state.player.freezed = value

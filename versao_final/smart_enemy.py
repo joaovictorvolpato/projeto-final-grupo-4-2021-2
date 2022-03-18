@@ -12,7 +12,7 @@ class SmartEnemy(KineticObject, InteractableObject, AbcRequestObject):
         AbcRequestObject.__init__(self, ['player'])
         # self._fake_player = None
         # usar depois para mudar sprite
-        self._dano = 5
+        self._dano = 300
         # self._deal_damage = False
 
     def move_request(self):

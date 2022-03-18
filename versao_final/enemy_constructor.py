@@ -15,7 +15,7 @@ class EnemyConstructor(Constructor):
         SPEED_SMART = self._config.get('smart-enemy-speed')
         if tag == 'e':
             simple_enemy = SimpleEnemy(
-                x*SIZE, y*SIZE, SIZE, SPEED)
+                x*SIZE, y*SIZE, SIZE, SPEED, f'sprites/lv{self._level}_tiles/e.png')
             self._lists.append('kinetic')
             return simple_enemy
         if tag == 's':

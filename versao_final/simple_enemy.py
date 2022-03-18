@@ -2,18 +2,19 @@ import math
 
 from abc_kinetic_object import KineticObject
 from abc_interactable_object import InteractableObject
+import random
 
 
 class SimpleEnemy(KineticObject, InteractableObject):
-    def __init__(self, initial_x: int, initial_y: int, size: int, speed: int):
+    def __init__(self, initial_x: int, initial_y: int, size: int, speed: int, sprite: str):
         KineticObject.__init__(self, initial_x, initial_y,
-                               size, 'sprites/vacuum.png', speed)
+                               size, sprite, speed)
         InteractableObject.__init__(self)
         # usar depois para mudar sprite
         self._facing_direction = 'right'
-        self._velX = self.speed*0.5
-        self._velY = self.speed*0.25
-        self._dano = 20
+        self._velX = self.speed * (random.randint(-10, 10)/10)
+        self._velY = self.speed * (random.randint(-10, 10)/10)
+        self._dano = 100
 
     def normalize(self):
         if self._velX != 0 and self._velY != 0:

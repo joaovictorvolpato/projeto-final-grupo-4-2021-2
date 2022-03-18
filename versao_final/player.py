@@ -6,7 +6,7 @@ from abc_kinetic_object import KineticObject
 class Player(KineticObject, Command):
     def __init__(self, initial_x: int, initial_y: int, size: int, speed: int):
         KineticObject.__init__(
-            self, initial_x, initial_y, size, 'sprites/placeholder.png',  speed)
+            self, initial_x, initial_y, size, 'sprites/player_down.png',  speed)
         Command.__init__(
             self, {'up': False, 'down': False, 'right': False, 'left': False, 'space_bar': False})
         # usar depois para mudar sprite
@@ -104,6 +104,7 @@ class Player(KineticObject, Command):
 
         self._is_interacting = self._commands['space_bar']
         self.change_facing_direction()
+        self.change_sprite(f'sprites/player_{self._facing_direction}.png')
         self._velX = 0
         self._velY = 0
         if self._commands['left'] and not self._commands['right']:

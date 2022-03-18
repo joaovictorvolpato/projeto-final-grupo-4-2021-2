@@ -1,10 +1,12 @@
 from abc_constructor import Constructor
 from key import Key
+from final_key import FinalKey
+
 
 
 class EventConstructor(Constructor):
     def __init__(self):
-        super().__init__(['1', '2', '3'], ['object', 'event'])
+        super().__init__(['1', '2', '3','4', 'fk'], ['object', 'event'])
 
     def instantiate(self, x, y, tag):
         self.__init__()
@@ -13,3 +15,8 @@ class EventConstructor(Constructor):
             key = Key(x*SIZE, y*SIZE, SIZE, int(tag))
             self._lists.append('obstacle')
             return key
+        if tag == 'fk':
+            final_key = FinalKey(x*SIZE, y*SIZE, SIZE)
+            self._lists.append('obstacle')
+            self._lists.append('request')
+            return final_key

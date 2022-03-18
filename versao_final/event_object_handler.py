@@ -4,6 +4,7 @@ from game_state import GameState
 class EventObjectHandler:
     def __init__(self):
         self.__game_state = GameState(1)
+        self.__next_state = None
 
     def handle_events(self):
         for i in self.__game_state.event_objects:

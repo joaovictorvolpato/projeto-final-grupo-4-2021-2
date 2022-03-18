@@ -1,5 +1,3 @@
-import time
-
 from game_state import GameState
 
 

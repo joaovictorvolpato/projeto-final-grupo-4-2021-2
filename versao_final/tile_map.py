@@ -78,34 +78,3 @@ class TileMapConstructor:
                             for list in constructor.lists:
                                 self.__lists_dict[list].append(obj)
                 # mudar para classes dps, tirar ifs
-
-                # if tile == 'x':
-                #     SIZE = self.__tile_size
-                #     wall = Tile(x*SIZE, y*SIZE, SIZE, (255, 0, 0))
-                #     self.__object_list.append(wall)
-                #     self.__obstacle_list.append(wall)
-                # elif tile == 'o':
-                #     SIZE = self.__tile_size
-                #     wall = Tile(x*SIZE, y*SIZE, SIZE, (0, 255, 0))
-                #     self.__object_list.append(wall)
-                # elif isinstance(tile, int):
-                #     SIZE = self.__tile_size
-                #     key = Key(x*SIZE, y*SIZE, SIZE, int(tile))
-                #     self.__object_list.append(key)
-                #     self.__event_list.append(key)
-                # elif tile == 'p' and self.__player is None:
-                #     SIZE = self.__tile_size
-                #     PLAYERSPEED = self.__level_dao.get("player_speed")
-                #     self.__player = Player(x*SIZE, y*SIZE,
-                #                            SIZE, PLAYERSPEED)
-                #     self.__object_list.append(self.__player)
-                #     self.__kinetic_list.append(self.__player)
-                #     self.__command_list.append(self.__player)
-                # elif tile == 'e':
-                #     SIZE = self.__tile_size
-                #     ENEMYSPEED = self.__level_dao.get('enemy_speed')
-                #     enemy = Simple_enemy(x*SIZE, y*SIZE,
-                #                          SIZE, ENEMYSPEED)
-                #     self.__enemy_list.append(enemy)
-                #     self.__kinetic_list.append(enemy)
-                #     self.__object_list.append(enemy)

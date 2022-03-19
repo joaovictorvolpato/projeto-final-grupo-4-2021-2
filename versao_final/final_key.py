@@ -8,12 +8,3 @@ class FinalKey(EventObject):
 
     def trigger_event(self):
         return {'change_state': 'win'}
-
-    # def use_request(self, requested: list):
-    #     return super().use_request(requested)
-
-    # def request_to_gs(self):
-
-    # @property
-    # def won_game(self):
-    #     return self.__won_game

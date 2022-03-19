@@ -37,9 +37,7 @@ class InteractionHandler:
 
     def __heal_player(self, value):
         self.__game_state.player.current_health
-        print(value)
         self.__game_state.player.current_health += value
         MAX_HEALTH = self.__game_state.player.max_health
         if self.__game_state.player.current_health > MAX_HEALTH:
             self.__game_state.player.current_health = MAX_HEALTH
-        print(self.__game_state.player.current_health)

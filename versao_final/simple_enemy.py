@@ -32,11 +32,3 @@ class SimpleEnemy(KineticObject, InteractableObject):
 
     def on_contact(self):
         return {'hit': self._dano}
-
-    # def use_request(self, requested: list):
-    #     self._fake_player = requested[0]
-
-    # def request_to_gs(self):
-    #     if self._deal_damage == True:
-    #         self._deal_damage = False
-    #         return {'hit': self._dano}

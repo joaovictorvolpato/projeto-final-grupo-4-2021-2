@@ -1,14 +1,11 @@
 from abc_singleton import Singleton
 from tile_map import TileMapConstructor
 from player import Player
-import pygame
 
 
 class GameState(metaclass=Singleton):
     def __init__(self, level):
         self.__level = level
-        self.__bg = pygame.image.load(
-            f'sprites/lv{level}_tiles/background.png')
         self.__tile_map = TileMapConstructor(level)
         self.__obstacles = self.__tile_map.obstacle_list
         self.__player = self.__tile_map.player
@@ -62,10 +59,6 @@ class GameState(metaclass=Singleton):
     @property
     def request_objects(self):
         return self.__request_objects
-
-    @property
-    def bg(self):
-        return self.__bg
 
     @player.setter
     def player(self, new):

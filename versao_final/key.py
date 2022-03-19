@@ -1,5 +1,4 @@
 from abc_event_object import EventObject
-from abc_request_object import AbcRequestObject
 
 
 class Key(EventObject):
@@ -9,12 +8,3 @@ class Key(EventObject):
 
     def trigger_event(self):
         return {'change-lv': self._next_level}
-
-    # def use_request(self, requested: list):
-    #     return super().use_request(requested)
-
-    # def request_to_gs(self):
-    #     if self._change_level == True:
-    #         return {'change-lv': self._next_level}
-    #         self._change_level = False
-    #     return {}

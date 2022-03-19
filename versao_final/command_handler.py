@@ -1,4 +1,3 @@
-from multiprocessing import Event
 from game_state import GameState
 from event_handler import EventHandler
 import pygame

@@ -10,10 +10,7 @@ class SmartEnemy(KineticObject, InteractableObject, AbcRequestObject):
                                size, sprite, speed)
         InteractableObject.__init__(self)
         AbcRequestObject.__init__(self, ['player'])
-        # self._fake_player = None
-        # usar depois para mudar sprite
         self._dano = 300
-        # self._deal_damage = False
 
     def move_request(self):
         player = self._fake_player
@@ -39,8 +36,3 @@ class SmartEnemy(KineticObject, InteractableObject, AbcRequestObject):
     def use_request(self, requested: list):
         # modificacoes nao alteram player verdadeiro
         self._fake_player = requested[0]
-
-    # def request_to_gs(self):
-    #     if self._deal_damage == True:
-    #         self._deal_damage = False
-    #         return {'hit': self._dano}

@@ -8,18 +8,18 @@ class MainMenu(AbcMenu):
         start_game_button_image_path = \
             join('images', 'start_game_button_main_menu.png')
         start_game_button = MenuButton(
-            start_game_button_image_path,
-            'level_selection',
-            436,
-            507
-        )
+                start_game_button_image_path,
+                'level_selection',
+                395,
+                516
+                )
         quit_button_image_path = join('images', 'quit_button_main_menu.png')
         quit_button = MenuButton(
-            quit_button_image_path,
-            'quit',
-            436,
-            616
-        )
+                quit_button_image_path,
+                'quit',
+                395,
+                695
+                )
         buttons = [start_game_button, quit_button]
         background_path = join('images', 'background_main_menu.png')
         name = 'main'

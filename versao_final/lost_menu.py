@@ -16,7 +16,7 @@ class LostMenu(AbcMenu):
         quit_button_image_path = \
                 join('images', 'quit_button_large.png')
         quit_button = \
-                MenuButton(quit_button_image_path, 'quit', 595, 670)
+                MenuButton(quit_button_image_path, 'quit', 395, 670)
         buttons = [return_to_menu_button, quit_button]
         background_path = join('images', 'background_failed_screen.png')
         name = 'lost'

@@ -1,4 +1,3 @@
-from ast import In
 from abc_object import ABCObject
 from abc_interactable_object import InteractableObject
 

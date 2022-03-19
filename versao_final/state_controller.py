@@ -26,6 +26,7 @@ class StateController:
                     if state.name == self.__current_state.next_state[0]:
                         next_semi_state = self.__current_state.next_state[1]
                         self.__current_state = state
+                        self.__current_state.reset()
                         self.__current_state.change_semi_state(next_semi_state)
                         break
 

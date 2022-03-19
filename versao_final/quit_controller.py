@@ -20,3 +20,6 @@ class QuitController(AbcState):
 
     def change_semi_state(self, variable):
         return super().change_semi_state()
+
+    def reset(self):
+        return super().reset()

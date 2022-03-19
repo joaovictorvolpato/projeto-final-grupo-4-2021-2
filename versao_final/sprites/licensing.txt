@@ -4,3 +4,5 @@ https://www.pexels.com/license/
 https://pixabay.com/service/license/
 https://szadiart.itch.io/rpg-main-character
 https://www.python.org/community/logos/
+https://www.oracle.com/java/duke/
+https://git-scm.com/downloads/logos

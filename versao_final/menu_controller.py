@@ -49,3 +49,8 @@ class MenuController(AbcState):
     def change_semi_state(self, next_menu):
         self._next_state = None
         self.__change_menu(next_menu)
+
+    def reset(self):
+        current = self._current_menu.name
+        self.__init__(self._screen_size)
+        self.__change_menu(current)

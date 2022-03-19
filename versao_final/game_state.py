@@ -6,6 +6,7 @@ import pygame
 
 class GameState(metaclass=Singleton):
     def __init__(self, level):
+        self.__level = level
         self.__bg = pygame.image.load(
             f'sprites/lv{level}_tiles/background.png')
         self.__tile_map = TileMapConstructor(level)
@@ -21,6 +22,10 @@ class GameState(metaclass=Singleton):
 
     def change_level(self, next_level: int):
         self.__init__(next_level)
+
+    @property
+    def level(self):
+        return self.__level
 
     @property
     def player(self):

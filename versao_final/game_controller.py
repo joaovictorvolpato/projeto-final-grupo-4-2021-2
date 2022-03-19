@@ -13,6 +13,7 @@ from vitctory_lost_handler import VictoryLostHandler
 
 class GameController(AbcState):
     def __init__(self, screen_size):
+        self._screen_size = screen_size
         super().__init__('game')
         self.__renderer = GameRenderer(screen_size)
         self.__command_handler = CommandHandler()
@@ -41,3 +42,8 @@ class GameController(AbcState):
 
     def change_semi_state(self, next_level):
         self.__request_analyser.game_state.change_level(next_level)
+
+    def reset(self):
+        level = self.__request_analyser.game_state.level
+        self.__init__(self._screen_size)
+        self.__request_analyser.game_state.change_level(level)
